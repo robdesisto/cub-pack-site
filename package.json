@@ -6,8 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --inline --progress --port 8000",
     "deploy": "webpack --config config/webpack.deploy.js",
-    "test": "karma start",
-    "postinstall": "npm test"
+    "test": "karma start"
   },
   "repository": {
     "type": "git",
