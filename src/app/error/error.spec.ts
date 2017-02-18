@@ -3,7 +3,7 @@ import {DebugElement} from '@angular/core';
 import {By} from '@angular/platform-browser';
 import {ErrorComponent} from './error.component';
 
-describe('Component: dashboard', () => {
+describe('Component: error', () => {
     let component: ErrorComponent;
     let fixture: ComponentFixture<ErrorComponent>;
     let element: DebugElement;

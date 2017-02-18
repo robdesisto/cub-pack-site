@@ -4,7 +4,7 @@
   "description": "An open source project to let any cub scout pack quickly build an online presence.",
   "main": "./src/index.ts",
   "scripts": {
-    "start": "webpack-dev-server --inline --progress --port 8000",
+    "start": "webpack-dev-server --inline --progress --port 8122",
     "deploy": "webpack --config config/webpack.deploy.js",
     "test": "karma start"
   },

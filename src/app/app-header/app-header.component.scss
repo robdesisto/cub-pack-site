@@ -1,0 +1,26 @@
+@import '../../shared/sass/shared';
+
+:host {
+  display: block;
+}
+
+.navbar {
+  background: linear-gradient(to bottom, $sea-dark-blue 0%, $scout-blue 100%);
+  box-shadow: 0 2px 2px 0 $shadow;
+
+  .navbar-brand {
+    color: $cub-yellow;
+    max-width: 230px;
+    padding-left: 43px;
+    position: relative;
+    text-shadow: 1px 1px 2px $shadow;
+
+    .logo {
+      height: 34px;
+      left: 0;
+      position:absolute;
+      margin-top: -17px;
+      top: 50%;
+    }
+  }
+}

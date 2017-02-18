@@ -4,6 +4,8 @@ import {HttpModule} from '@angular/http';
 
 // App goodness
 import {appRouting} from './app.routing';
+import {AppComponent} from './app.component';
+import {AppHeaderComponent} from './app-header/app-header.component';
 import {ErrorComponent} from './error/error.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 
@@ -11,10 +13,6 @@ import {NotFoundComponent} from './not-found/not-found.component';
 import {CoreModule} from '../core/core.module';
 import {SharedModule} from '../shared/shared.module';
 import {NewsModule} from '../news/news.module';
-
-
-// App Level Components
-import {AppComponent} from './app.component';
 
 @NgModule({
     imports: [
@@ -27,6 +25,7 @@ import {AppComponent} from './app.component';
     ],
     declarations: [
         AppComponent,
+        AppHeaderComponent,
         ErrorComponent,
         NotFoundComponent
     ],

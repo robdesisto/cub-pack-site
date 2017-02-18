@@ -6,9 +6,10 @@ import {SharedModule} from '../shared/shared.module';
 import {AppComponent} from './app.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {ErrorComponent} from './error/error.component';
+import {AppHeaderComponent} from './app-header/app-header.component';
 import {appRouting} from './app.routing';
 
-describe('Component: dashboard', () => {
+describe('Component: app', () => {
     let component: AppComponent;
     let fixture: ComponentFixture<AppComponent>;
     let element: DebugElement;
@@ -21,6 +22,7 @@ describe('Component: dashboard', () => {
             ],
             declarations: [
                 AppComponent,
+                AppHeaderComponent,
                 NotFoundComponent,
                 ErrorComponent
             ],
@@ -33,7 +35,7 @@ describe('Component: dashboard', () => {
     beforeEach(() => {
         fixture = TestBed.createComponent(AppComponent);
         component = fixture.componentInstance;
-        element = fixture.debugElement.query(By.css('.zui-component-app'));
+        element = fixture.debugElement.query(By.css('.component-app'));
 
         fixture.detectChanges();
     });

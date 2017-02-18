@@ -3,7 +3,7 @@ import {DebugElement} from '@angular/core';
 import {By} from '@angular/platform-browser';
 import {NotFoundComponent} from './not-found.component';
 
-describe('Component: dashboard', () => {
+describe('Component: not-found', () => {
     let component: NotFoundComponent;
     let fixture: ComponentFixture<NotFoundComponent>;
     let element: DebugElement;
