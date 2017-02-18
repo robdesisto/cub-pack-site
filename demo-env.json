@@ -1,0 +1,11 @@
+{
+  "env": "uat",
+
+  "options": {
+    "uat": {
+      "serverUrl": "https://app.dev.insights.zuora.io",
+      "userName": "efelix+3@zuora.com",
+      "password": "xoYTZ120IUt8!"
+    }
+  }
+}
