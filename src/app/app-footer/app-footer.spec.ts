@@ -3,11 +3,11 @@ import {DebugElement} from '@angular/core';
 import {APP_BASE_HREF} from '@angular/common';
 import {By} from '@angular/platform-browser';
 import {SharedModule} from '../../shared/shared.module';
-import {AppHeaderComponent} from './app-header.component';
+import {AppFooterComponent} from './app-footer.component';
 
-describe('Component: app-header', () => {
-    let component: AppHeaderComponent;
-    let fixture: ComponentFixture<AppHeaderComponent>;
+describe('Component: app-footer', () => {
+    let component: AppFooterComponent;
+    let fixture: ComponentFixture<AppFooterComponent>;
     let element: DebugElement;
 
     beforeEach(async(() => {
@@ -16,7 +16,7 @@ describe('Component: app-header', () => {
                 SharedModule
             ],
             declarations: [
-                AppHeaderComponent
+                AppFooterComponent
             ],
             providers: [
                 {provide: APP_BASE_HREF, useValue : '/' }
@@ -25,9 +25,9 @@ describe('Component: app-header', () => {
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(AppHeaderComponent);
+        fixture = TestBed.createComponent(AppFooterComponent);
         component = fixture.componentInstance;
-        element = fixture.debugElement.query(By.css('.component-app-header'));
+        element = fixture.debugElement.query(By.css('.component-app-footer'));
 
         fixture.detectChanges();
     });
@@ -36,3 +36,4 @@ describe('Component: app-header', () => {
         expect(typeof(component)).not.toBe(('undefined'));
     });
 });
+

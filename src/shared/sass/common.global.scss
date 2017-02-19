@@ -37,3 +37,68 @@
 @import "~bootstrap/scss/carousel";
 
 @import "~bootstrap/scss/utilities";
+
+
+@include media-breakpoint-down(sm) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+  }
+
+  .row-offcanvas-right {
+    right: 0;
+  }
+
+  .row-offcanvas-left {
+    left: 0;
+  }
+
+  .row-offcanvas-right .sidebar-offcanvas {
+    right: -50%;
+  }
+
+  .row-offcanvas-left .sidebar-offcanvas {
+    left: -50%;
+  }
+
+  .row-offcanvas-right.active {
+    right: 50%;
+  }
+
+  .row-offcanvas-left.active {
+    left: 50%;
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 50%;
+  }
+}
+
+.btn-primary {
+  background-color:$brand-primary;
+  border-color:$brand-primary;
+
+  &:hover, &:focus, &.active, &.active:hover, &.active:focus {
+    background-color: darken($brand-primary, 10%) !important;
+    border-color: darken($brand-primary, 10%) !important;
+  }
+}
+
+a.list-group-item {
+  color: $scout-blue;
+
+  &:hover, &:focus, &.active, &.active:hover, &.active:focus {
+    background-color:$sea-blue-light;
+    border-color:$sea-blue-light;
+    color: white;
+    text-decoration: none;
+  }
+
+  &.active, &.active:hover, &.active:focus {
+    color: $cub-yellow;
+  }
+}
