@@ -92,13 +92,13 @@ a.list-group-item {
   color: $scout-blue;
 
   &:hover, &:focus, &.active, &.active:hover, &.active:focus {
-    background-color:$sea-blue-light;
-    border-color:$sea-blue-light;
+    background-color: $scout-blue-light;
+    border-color: $scout-blue-light;
     color: white;
     text-decoration: none;
   }
 
   &.active, &.active:hover, &.active:focus {
-    color: $cub-yellow;
+    color: white;
   }
 }
