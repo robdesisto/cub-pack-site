@@ -1,14 +1,11 @@
 <div class="component-news feature-content row row-offcanvas row-offcanvas-right" [class.active]="subNavShowing">
     <div class="col-12 col-md-9">
-        <p class="float-right hidden-md-up">
+        <p *ngIf="sectionMenu"  class="float-right hidden-md-up">
             <button type="button" class="btn btn-primary btn-sm" (click)="toggleSubmenu()">Random Menu</button>
         </p>
         <page-content [content]="staticContent"></page-content>
         <!-- TODO: Then normal content -->
-        <h2>Dynamic Content</h2>
-
-        <p>Dynamic content pulled from whatever source necessary would go in this section.</p>
         <!-- End -->
     </div>
-    <section-menu [menu]="sectionMenu" class="col-6 col-md-3 sidebar-offcanvas"></section-menu>
+    <section-menu *ngIf="sectionMenu" [menu]="sectionMenu" class="col-6 col-md-3 sidebar-offcanvas"></section-menu>
 </div>
