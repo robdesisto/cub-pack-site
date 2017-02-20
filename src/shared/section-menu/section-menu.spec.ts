@@ -1,29 +1,31 @@
 import {TestBed, ComponentFixture, async} from '@angular/core/testing';
 import {DebugElement} from '@angular/core';
 import {By} from '@angular/platform-browser';
-import {SharedModule} from '../../shared/shared.module';
-import {AppHeaderComponent} from './app-header.component';
+import {CommonModule} from '@angular/common';
+import {RouterModule} from '@angular/router';
+import {SectionMenuComponent} from './section-menu.component';
 
-describe('Component: app-header', () => {
-    let component: AppHeaderComponent;
-    let fixture: ComponentFixture<AppHeaderComponent>;
+describe('Component: section-menu', () => {
+    let component: SectionMenuComponent;
+    let fixture: ComponentFixture<SectionMenuComponent>;
     let element: DebugElement;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [
-                SharedModule
+                CommonModule,
+                RouterModule
             ],
             declarations: [
-                AppHeaderComponent
+                SectionMenuComponent
             ]
         });
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(AppHeaderComponent);
+        fixture = TestBed.createComponent(SectionMenuComponent);
         component = fixture.componentInstance;
-        element = fixture.debugElement.query(By.css('.component-app-header'));
+        element = fixture.debugElement.query(By.css('.component-section-menu'));
 
         fixture.detectChanges();
     });
@@ -32,3 +34,4 @@ describe('Component: app-header', () => {
         expect(typeof(component)).not.toBe(('undefined'));
     });
 });
+

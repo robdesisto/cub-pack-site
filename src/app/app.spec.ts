@@ -7,6 +7,7 @@ import {AppComponent} from './app.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {ErrorComponent} from './error/error.component';
 import {AppHeaderComponent} from './app-header/app-header.component';
+import {AppFooterComponent} from './app-footer/app-footer.component';
 import {appRouting} from './app.routing';
 
 describe('Component: app', () => {
@@ -23,6 +24,7 @@ describe('Component: app', () => {
             declarations: [
                 AppComponent,
                 AppHeaderComponent,
+                AppFooterComponent,
                 NotFoundComponent,
                 ErrorComponent
             ],

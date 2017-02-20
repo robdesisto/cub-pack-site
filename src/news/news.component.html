@@ -1,38 +1,14 @@
 <div class="component-news feature-content row row-offcanvas row-offcanvas-right" [class.active]="subNavShowing">
     <div class="col-12 col-md-9">
-        <!-- TODO: Page header component -->
         <p class="float-right hidden-md-up">
             <button type="button" class="btn btn-primary btn-sm" (click)="toggleSubmenu()">Random Menu</button>
         </p>
-        <div class="page-header">
-            <h1>Welcome to Pack 122!</h1>
-            <p>Uplifting text and maybe a carousel.</p>
-        </div>
-
+        <page-content [content]="staticContent"></page-content>
         <!-- TODO: Then normal content -->
-        <h2>Header Level 2</h2>
+        <h2>Dynamic Content</h2>
 
-        <ol>
-            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-            <li>Aliquam tincidunt mauris eu risus.</li>
-        </ol>
-
-        <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
-
-        <h3>Header Level 3</h3>
-
-        <ul>
-            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-            <li>Aliquam tincidunt mauris eu risus.</li>
-        </ul>
+        <p>Dynamic content pulled from whatever source necessary would go in this section.</p>
         <!-- End -->
     </div>
-    <!-- TODO: Sub nav component -->
-    <div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar">
-        <div class="list-group">
-            <a href="#" class="list-group-item active">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-        </div>
-    </div>
+    <section-menu [menu]="sectionMenu" class="col-6 col-md-3 sidebar-offcanvas"></section-menu>
 </div>

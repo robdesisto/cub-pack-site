@@ -60,7 +60,8 @@ module.exports = {
         }),
 
         new CopyWebpackPlugin([
-            { from: helpers.root('src/static'), to: helpers.root('build/static') }
+            { from: helpers.root('src/static'), to: helpers.root('build/static') },
+            { from: helpers.root('src/_redirects'), to: helpers.root('build') }
         ]),
 
         new webpack.ContextReplacementPlugin(

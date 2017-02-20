@@ -3,6 +3,9 @@ import {FormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 
+import {SectionMenuComponent} from './section-menu/section-menu.component';
+import {PageContentComponent} from './page-content/page-content.component';
+
 @NgModule({
     imports: [
         CommonModule,
@@ -10,12 +13,15 @@ import {RouterModule} from '@angular/router';
         RouterModule
     ],
     declarations: [
-        // NOTE: shared components, pipes, and maybe services go here
+        PageContentComponent,
+        SectionMenuComponent
     ],
     exports: [
         CommonModule,
         FormsModule,
-        RouterModule
+        RouterModule,
+        PageContentComponent,
+        SectionMenuComponent
     ],
     providers: []
 })

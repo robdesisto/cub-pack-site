@@ -1,6 +1,5 @@
 import {TestBed, ComponentFixture, async} from '@angular/core/testing';
 import {DebugElement} from '@angular/core';
-import {APP_BASE_HREF} from '@angular/common';
 import {By} from '@angular/platform-browser';
 import {SharedModule} from '../../shared/shared.module';
 import {AppFooterComponent} from './app-footer.component';
@@ -17,9 +16,6 @@ describe('Component: app-footer', () => {
             ],
             declarations: [
                 AppFooterComponent
-            ],
-            providers: [
-                {provide: APP_BASE_HREF, useValue : '/' }
             ]
         });
     }));

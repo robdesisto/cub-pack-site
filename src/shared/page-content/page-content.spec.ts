@@ -1,29 +1,31 @@
 import {TestBed, ComponentFixture, async} from '@angular/core/testing';
 import {DebugElement} from '@angular/core';
 import {By} from '@angular/platform-browser';
-import {SharedModule} from '../../shared/shared.module';
-import {AppHeaderComponent} from './app-header.component';
+import {CommonModule} from '@angular/common';
+import {RouterModule} from '@angular/router';
+import {PageContentComponent} from './page-content.component';
 
-describe('Component: app-header', () => {
-    let component: AppHeaderComponent;
-    let fixture: ComponentFixture<AppHeaderComponent>;
+describe('Component: page-content', () => {
+    let component: PageContentComponent;
+    let fixture: ComponentFixture<PageContentComponent>;
     let element: DebugElement;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [
-                SharedModule
+                CommonModule,
+                RouterModule
             ],
             declarations: [
-                AppHeaderComponent
+                PageContentComponent
             ]
         });
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(AppHeaderComponent);
+        fixture = TestBed.createComponent(PageContentComponent);
         component = fixture.componentInstance;
-        element = fixture.debugElement.query(By.css('.component-app-header'));
+        element = fixture.debugElement.query(By.css('.component-page-content'));
 
         fixture.detectChanges();
     });

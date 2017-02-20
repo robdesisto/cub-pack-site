@@ -38,7 +38,7 @@
 
 @import "~bootstrap/scss/utilities";
 
-
+/* General Layout */
 @include media-breakpoint-down(sm) {
   .row-offcanvas {
     position: relative;
@@ -51,24 +51,16 @@
     right: 0;
   }
 
-  .row-offcanvas-left {
-    left: 0;
-  }
-
   .row-offcanvas-right .sidebar-offcanvas {
-    right: -50%;
-  }
-
-  .row-offcanvas-left .sidebar-offcanvas {
-    left: -50%;
+    right: -100%;
   }
 
   .row-offcanvas-right.active {
     right: 50%;
-  }
 
-  .row-offcanvas-left.active {
-    left: 50%;
+    .sidebar-offcanvas {
+      right: -50%;
+    }
   }
 
   .sidebar-offcanvas {
@@ -78,6 +70,14 @@
   }
 }
 
+/* Overrides */
+h1, h2 {
+  border-bottom: 1px solid $cub-yellow;
+  color: $scout-blue-dark;
+  margin: 0 0 15px;
+  padding: 0 0 15px;
+}
+
 .btn-primary {
   background-color:$brand-primary;
   border-color:$brand-primary;
@@ -85,20 +85,5 @@
   &:hover, &:focus, &.active, &.active:hover, &.active:focus {
     background-color: darken($brand-primary, 10%) !important;
     border-color: darken($brand-primary, 10%) !important;
-  }
-}
-
-a.list-group-item {
-  color: $scout-blue;
-
-  &:hover, &:focus, &.active, &.active:hover, &.active:focus {
-    background-color: $scout-blue-light;
-    border-color: $scout-blue-light;
-    color: white;
-    text-decoration: none;
-  }
-
-  &.active, &.active:hover, &.active:focus {
-    color: white;
   }
 }

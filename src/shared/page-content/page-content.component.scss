@@ -1,0 +1,10 @@
+@import "../sass/shared";
+
+:host {
+  display: block;
+}
+
+.component-page-content {
+  color: $gray-light;
+  padding: 40px 0;
+}
