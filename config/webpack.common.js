@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const helpers = require('./helpers');
+const path = require('path');
 
 module.exports = {
     entry: {
@@ -65,8 +66,8 @@ module.exports = {
         ]),
 
         new webpack.ContextReplacementPlugin(
-            /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
-            __dirname
+            /angular(\\|\/)core(\\|\/)@angular/,
+            path.resolve(__dirname, '../src')
         )
     ]
 };

@@ -10,7 +10,7 @@ export class FeatureSection {
         this.staticContent = new StaticContent({
             title: 'Welcome to Pack 122',
             section: 'home',
-            content: '<p>You have reached the home page of Cub Scout Pack 122 serving Coronado, the Cays, and Imperial Beach. We are currently under construction but anticipate being up by March 1, 2017.</p>'
+            content: '<p>You have reached the home page of Cub Scout Pack 122 serving Coronado, the Cays, and Imperial Beach. We are currently under construction but anticipate being up in the spring.</p>'
 
         });
     }
