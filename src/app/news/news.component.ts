@@ -1,4 +1,6 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {Title} from '@angular/platform-browser';
 import {Subscription} from 'rxjs/Subscription';
 import {FeatureSection} from '../core/common/FeatureSection';
 
@@ -11,18 +13,15 @@ export class NewsComponent extends FeatureSection implements OnInit, OnDestroy {
 
     private newsSub: Subscription;
 
-    constructor() {
+    constructor(private title: Title, private activatedRoute: ActivatedRoute) {
         super();
     }
 
     ngOnInit(): void {
-        /*
-        this.demoSub = this.demoServiceStub.cards$.subscribe((reports: Map <string, CardStub>) => {
-            this.demoCards = Array.from(reports.values());
-        }); */
+        this.title.setTitle(this.activatedRoute.snapshot.data.title);
     }
 
     ngOnDestroy(): void {
-        // this.demoSub.unsubscribe();
+
     }
 }

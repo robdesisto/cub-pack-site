@@ -6,6 +6,7 @@ import {NotFoundComponent} from './not-found/not-found.component';
 // TODO: update route to your first real route
 const appRoutes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: 'home', loadChildren: './news/news.module#NewsModule'},
     { path: 'error', component: ErrorComponent },
     { path: '**', component: NotFoundComponent }
 ];

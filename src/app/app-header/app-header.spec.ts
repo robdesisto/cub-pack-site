@@ -1,7 +1,7 @@
 import {TestBed, ComponentFixture, async} from '@angular/core/testing';
 import {DebugElement} from '@angular/core';
 import {By} from '@angular/platform-browser';
-import {SharedModule} from '../../shared/shared.module';
+import {SharedModule} from '../shared/shared.module';
 import {AppHeaderComponent} from './app-header.component';
 
 describe('Component: app-header', () => {

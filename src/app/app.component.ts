@@ -1,6 +1,6 @@
 ﻿import {Component, OnInit} from '@angular/core';
 import '../rxjs-ops';
-import '../shared/sass/common.global.scss';
+import './shared/sass/common.global.scss';
 
 @Component({
     selector: 'app',

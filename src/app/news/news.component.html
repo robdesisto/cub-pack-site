@@ -1,5 +1,5 @@
 <div class="component-news feature-content row row-offcanvas row-offcanvas-right" [class.active]="subNavShowing">
-    <div class="col-12 col-md-9">
+    <div class="col-12" [class.col-md-9]="sectionMenu">
         <p *ngIf="!sectionMenu"  class="float-right hidden-md-up">
             <button type="button" class="btn btn-primary btn-sm" (click)="toggleSubmenu()">Random Menu</button>
         </p>

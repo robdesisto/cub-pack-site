@@ -11,9 +11,9 @@ import {ErrorComponent} from './error/error.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 
 // Feature Modules
-import {CoreModule} from '../core/core.module';
-import {SharedModule} from '../shared/shared.module';
-import {NewsModule} from '../news/news.module';
+import {CoreModule} from './core/core.module';
+import {SharedModule} from './shared/shared.module';
+import {NewsModule} from './news/news.module';
 
 @NgModule({
     imports: [

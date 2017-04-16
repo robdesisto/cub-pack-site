@@ -8,7 +8,7 @@ module.exports = {
     entry: {
         'polyfills': './src/polyfills.ts',
         'vendor': './src/vendor.ts',
-        'app': './src/index.ts'
+        'app': './src/main.ts'
     },
     resolve: {
         extensions: ['.ts', '.js'],
@@ -24,7 +24,7 @@ module.exports = {
             },
             {
                 test: /\.ts$/,
-                loaders: ['awesome-typescript-loader', 'angular2-template-loader'],
+                loaders: ['awesome-typescript-loader', 'angular2-template-loader', 'angular2-router-loader'],
                 exclude: [/\.(spec|e2e)\.ts$/]
             },
             {

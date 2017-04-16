@@ -1,5 +1,5 @@
 @import "variables";
-@import "~bootstrap/scss/bootstrap";
+@import "../../../../node_modules/bootstrap/scss/bootstrap";
 
 /* General Layout */
 @include media-breakpoint-down(sm) {
@@ -31,6 +31,10 @@
     top: 0;
     width: 50%;
   }
+}
+
+body {
+    color: $gray-light;
 }
 
 /* Overrides */

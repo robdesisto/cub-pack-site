@@ -4,10 +4,10 @@ import {NewsComponent} from './news.component';
 
 const newsRoutes: Routes = [
     {
-        path: 'home',
+        path: '',
         component: NewsComponent,
         data: {
-            title: 'Your first feature area!'
+            title: 'Pack 122 News and Updates'
         },
     }
 ];
