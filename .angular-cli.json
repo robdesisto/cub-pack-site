@@ -18,12 +18,11 @@
             "testTsconfig": "tsconfig.spec.json",
             "prefix": "app",
             "styles": [
-                "styles.sass"
+                "styles.scss"
             ],
             "stylePreprocessorOptions": {
                 "includePaths": [
-                    "./",
-                    "./themes"
+                    "themes"
                 ]
             },
             "scripts": [],
@@ -56,7 +55,7 @@
         }
     },
     "defaults": {
-        "styleExt": "sass",
+        "styleExt": "scss",
         "component": {}
     }
 }

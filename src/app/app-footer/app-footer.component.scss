@@ -1,10 +1,10 @@
-@import '../shared/sass/shared';
+@import 'app.shared';
 
 :host {
-  display: block;
-  padding: 30px 0;
+    display: block;
+    padding: 30px 0;
 }
 
 p {
-  margin: 5px 0;
+    margin: 5px 0;
 }

@@ -1,1 +1,34 @@
-@import "cub-scout.theme";
+@import 'cub-scout.theme';
+@import 'app.shared';
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/utilities";
+
+*, *:active, *:focus {
+    outline: none !important;
+}
+
+html, body {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+html, body, app-root, mat-sidenav-container, .main {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.component-block {
+    display: block;
+}
+
+.content-wrapper {
+    padding-top: 5rem;
+}
+
+.mat-drawer {
+    background-color: $scout-blue;
+    width: 250px;
+}

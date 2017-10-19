@@ -1,14 +1,9 @@
-import {Component} from '@angular/core';
+import {Component, HostBinding, ChangeDetectionStrategy} from '@angular/core';
 
 @Component({
-    selector: 'error',
     templateUrl: './error.component.html',
-    styleUrls: ['./error.component.scss']
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ErrorComponent {
-
-    constructor() {
-
-    }
-
+    @HostBinding('class') private readonly classList = 'component-block';
 }
