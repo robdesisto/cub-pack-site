@@ -1,19 +1,10 @@
-﻿import {Component, OnInit} from '@angular/core';
-import '../rxjs-ops';
-import './shared/sass/common.global.scss';
+import {Component} from '@angular/core';
 
 @Component({
-    selector: 'app',
-    templateUrl: 'app.component.html',
-    styleUrls: ['app.component.scss']
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.sass']
 })
-export class AppComponent implements OnInit {
-
-    constructor() {
-
-    }
-
-    ngOnInit(): void {
-        console.log('loading');
-    }
+export class AppComponent {
+  title = 'app';
 }

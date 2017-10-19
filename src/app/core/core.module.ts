@@ -1,19 +1,23 @@
-﻿import {NgModule, Optional, SkipSelf} from '@angular/core';
-import {DataService} from './services/DataService';
-import {ContentfulService} from './services/ContentfulService';
+import {NgModule, Optional, SkipSelf} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {HttpClientModule} from '@angular/common/http';
 
-// Almost all services should be here
 @NgModule({
-    providers: [
-        DataService,
-        ContentfulService
+    imports: [
+        /* 3rd party libraries */
+        CommonModule,
+        HttpClientModule,
     ],
+    declarations: [],
+    providers: []
 })
 export class CoreModule {
-    constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
+    /* make sure CoreModule is imported only by one NgModule the AppModule */
+    constructor (
+        @Optional() @SkipSelf() parentModule: CoreModule
+    ) {
         if (parentModule) {
-            throw new Error(
-                'CoreModule is already loaded. Import it in the AppModule only.');
+            throw new Error('CoreModule is already loaded. Import only in AppModule');
         }
     }
 }
