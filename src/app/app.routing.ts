@@ -6,9 +6,21 @@ import {NotFoundComponent} from '@app/not-found/not-found.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'home', loadChildren: './home/home.module#HomeModule'},
-    { path: 'error', component: ErrorComponent },
-    { path: '**', component: NotFoundComponent }
+    { path: 'home', loadChildren: './pages/pages.module#PagesModule'},
+    {
+        path: 'error',
+        component: ErrorComponent,
+        data: {
+            title: 'Oops.'
+        }
+    },
+    {
+        path: '**',
+        component: NotFoundComponent,
+        data: {
+            title: 'A Scout has lost the path.'
+        }
+    }
 ];
 
 @NgModule({

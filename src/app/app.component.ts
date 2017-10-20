@@ -1,14 +1,17 @@
 import {Component, OnInit} from '@angular/core';
+import {RouterOutlet, RouterState} from '@angular/router';
 import {Observable} from 'rxjs/Observable';
 
+import {routerTransition} from '@app/app.animations';
 import {NavItem} from '@app/shared/interfaces/NavItem';
 import {DataService} from '@app/core/services/DataService';
 import {FbEvent} from '@app/core/models/FbEvent';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    animations: [routerTransition]
 })
 export class AppComponent implements OnInit {
 
@@ -37,9 +40,14 @@ export class AppComponent implements OnInit {
 
     public fbEvents: Observable<FbEvent[]>;
 
-    constructor(private dataService: DataService) {}
+    constructor(private dataService: DataService) {
+    }
 
     public ngOnInit(): void {
         this.fbEvents = this.dataService.events$;
+    }
+
+    public getRouterState(outlet: RouterOutlet): RouterState {
+        return outlet.activatedRouteData.title;
     }
 }
