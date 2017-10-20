@@ -1,14 +1,19 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
-import {HomeComponent} from '@app/pages/home/home.component';
+import {HomeComponent} from '@app/home/home.component';
+import {PageContentResolverService} from '@app/core/services/PageContentResolver';
 
 const homeRoutes: Routes = [
     {
         path: '',
         component: HomeComponent,
         data: {
-            title: 'Home'
+            title: 'Home',
+            page: 'home'
+        },
+        resolve: {
+            content: PageContentResolverService
         }
     }
 ];
@@ -22,4 +27,4 @@ const homeRoutes: Routes = [
     ],
     providers: []
 })
-export class PagesRoutingModule { }
+export class HomeRoutingModule { }

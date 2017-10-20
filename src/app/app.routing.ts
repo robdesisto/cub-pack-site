@@ -1,12 +1,15 @@
 import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import {RouterModule, Routes, PreloadAllModules} from '@angular/router';
 
 import {ErrorComponent} from '@app/error/error.component';
 import {NotFoundComponent} from '@app/not-found/not-found.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'home', loadChildren: './pages/pages.module#PagesModule'},
+    { path: 'home', loadChildren: './home/home.module#HomeModule'},
+    { path: 'program', loadChildren: './program/program.module#ProgramModule'},
+    { path: 'charter', loadChildren: './charter/charter.module#CharterModule'},
+    { path: 'connect', loadChildren: './contact/contact.module#ContactModule'},
     {
         path: 'error',
         component: ErrorComponent,
@@ -25,7 +28,9 @@ const appRoutes: Routes = [
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(appRoutes)
+        RouterModule.forRoot(appRoutes, {
+            preloadingStrategy: PreloadAllModules
+        })
     ],
     exports: [
         RouterModule

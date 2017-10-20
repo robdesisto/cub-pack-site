@@ -1,10 +1,11 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {Observable} from 'rxjs/Observable';
 import {FacebookService, InitParams} from 'ngx-facebook';
+import * as contentful from 'contentful';
 
-import {FbEvent} from '../models/FbEvent';
+import {PageContent} from '@app/core/models/PageContent';
+import {FbEvent} from '@app/core/models/FbEvent';
 
 // HACK: move out of here
 import {buildVars} from './build-vars';
@@ -12,12 +13,37 @@ import {buildVars} from './build-vars';
 @Injectable()
 export class DataService {
 
+    private _pages: {[page: string]: PageContent};
+    private _pages$: BehaviorSubject<{[page: string]: PageContent}>;
     private _events: FbEvent[];
     private _events$: BehaviorSubject<FbEvent[]>;
+    private contentful: any;
 
-    constructor(private fb: FacebookService, private http: HttpClient) {
+    constructor(private fb: FacebookService) {
+        this.contentful = contentful.createClient({
+            space: buildVars.cSpaceId,
+            accessToken: buildVars.cToken
+        });
+
         this._events$ = new BehaviorSubject<FbEvent[]>(null);
+        this._pages$ = new BehaviorSubject<{[page: string]: PageContent}>(null);
         this.loadEvents();
+        this.loadPages();
+    }
+
+    get pages$(): Observable<{[page: string]: PageContent}> {
+        return this._pages$.asObservable();
+    }
+
+    set pages(pages: PageContent[]) {
+        const pageHash: {[page: string]: PageContent} = {};
+
+        pages.forEach((page: PageContent) => {
+            pageHash[page.name] = page;
+        });
+
+        this._pages = pageHash;
+        this._pages$.next(this._pages);
     }
 
     get events$(): Observable<FbEvent[]> {
@@ -34,7 +60,7 @@ export class DataService {
         this._events$.next(this._events);
     }
 
-    public loadEvents(): void {
+    private loadEvents(): void {
         const initParams: InitParams = {
             appId: buildVars.fbId,
             xfbml: true,
@@ -44,13 +70,33 @@ export class DataService {
         this.fb.init(initParams).then(() => {
             this.fb.api('/pack122/events', 'get', {
                 access_token: buildVars.fbToken
-            }).then((res: any) => {
-               this.events = res.data.map((obj: {[prop: string]: string}) => {
-                  return new FbEvent(obj);
-               });
+            })
+            .then((res: any) => {
+                if (res.data && res.data.length > 0) {
+                    this.events = res.data.map((obj: {[prop: string]: string}) => {
+                        return new FbEvent(obj);
+                    });
+                } else {
+                    return [];
+                }
             }, (e: any) => {
                 console.error(e);
             });
         });
+    }
+
+    private loadPages(): void {
+        this.contentful.getEntries()
+            .then((res: any) => {
+                if (res.items && res.items.length > 0) {
+                    this.pages = res.items.map((obj: {[prop: string]: string}) => {
+                        return new PageContent(obj);
+                    });
+                } else {
+                    return [];
+                }
+            }, (e: any) => {
+                console.error(e);
+            });
     }
 }

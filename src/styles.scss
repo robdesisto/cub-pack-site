@@ -1,6 +1,8 @@
 @import 'cub-scout.theme';
 @import 'app.shared';
+@import 'cms-content';
 @import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/images";
 @import "~bootstrap/scss/type";
 @import "~bootstrap/scss/grid";
 @import "~bootstrap/scss/navbar";
@@ -40,7 +42,11 @@ mat-sidenav-container,
 
 .content-wrapper {
     min-height: calc(100% - 9rem);
-    padding-top: 5rem;
+    padding-top: 6rem;
+}
+
+.mat-drawer-container {
+    color: $gray;
 }
 
 .mat-drawer {

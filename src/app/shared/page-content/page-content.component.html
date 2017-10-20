@@ -1,0 +1,4 @@
+<article *ngIf="content">
+    <h1 class="title">{{content.title}}</h1>
+    <div class="cms-content" [innerHtml]="content.content | markdown"></div>
+</article>

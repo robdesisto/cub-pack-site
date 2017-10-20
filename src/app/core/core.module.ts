@@ -1,18 +1,18 @@
 import {NgModule, Optional, SkipSelf} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {HttpClientModule} from '@angular/common/http';
 import {FacebookService} from 'ngx-facebook';
 
-import {DataService} from './services/DataService';
+import {DataService} from '@app/core/services/DataService';
+import {PageContentResolverService} from '@app/core/services/PageContentResolver';
 
 @NgModule({
     imports: [
         CommonModule,
-        HttpClientModule,
     ],
     providers: [
         FacebookService,
-        DataService
+        DataService,
+        PageContentResolverService
     ]
 })
 export class CoreModule {

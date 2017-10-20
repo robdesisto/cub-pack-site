@@ -1,0 +1,11 @@
+@import 'app.shared';
+
+.cms-content {
+    img {
+        border: 1px solid $scout-blue;
+        border-radius: .25rem;
+        display: block;
+        margin: 2rem auto;
+        max-width: 80%;
+    }
+}
