@@ -20,11 +20,19 @@ html, body, app-root, mat-sidenav-container, .main {
     height: 100%;
 }
 
+.container {
+    @include media-breakpoint-down(lg) {
+        max-width: 1140px;
+        width: 100%;
+    }
+}
+
 .component-block {
     display: block;
 }
 
 .content-wrapper {
+    min-height: calc(100% - 9rem);
     padding-top: 5rem;
 }
 

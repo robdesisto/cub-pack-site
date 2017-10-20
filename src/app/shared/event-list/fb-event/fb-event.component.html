@@ -1,2 +1,10 @@
-<h4>Upcoming Events</h4>
-<span *ngFor="let event of events">foo</span>
+<h5 class="event-name">{{event.name}}</h5>
+<div class="event-details">
+    <dl class="time clearfix">
+        <dt>Starts</dt>
+        <dd>{{event.start | date: 'medium'}}</dd>
+        <dt>Ends</dt>
+        <dd>{{event.end | date: 'medium'}}</dd>
+    </dl>
+    <p class="description">{{event.description}}</p>
+</div>

@@ -2,4 +2,40 @@
 
 :host {
     display: block;
+    margin-bottom: 2rem;
+}
+
+.event-name {
+    color: $scout-blue;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.event-details {
+    font-size: $font-size-sm;
+}
+
+dl {
+    margin-bottom: 0.25rem;
+
+    dt {
+        clear: left;
+        color: $gray-light;
+        float: left;
+
+        &::after {
+            content: ':';
+        }
+    }
+
+    dd {
+        float: left;
+        margin: 0 0 0 0.5rem;
+    }
+}
+
+.description {
+    clear: both;
+    color: $gray-light;
+    font-weight: lighter;
 }

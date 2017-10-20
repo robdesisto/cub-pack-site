@@ -1,0 +1,11 @@
+@import 'app.shared';
+
+:host {
+    display: block;
+}
+
+h4 {
+    border-bottom: 1px solid $scout-blue-lightest;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+}

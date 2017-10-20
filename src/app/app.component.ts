@@ -1,13 +1,17 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Observable} from 'rxjs/Observable';
 
-import {NavItem} from '@app/shared';
+import {NavItem} from '@app/shared/interfaces/NavItem';
+import {DataService} from '@app/core/services/DataService';
+import {FbEvent} from '@app/core/models/FbEvent';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
     public navItems: NavItem[] = [
         {
             url: 'home',
@@ -30,4 +34,12 @@ export class AppComponent {
             icon: 'feedback'
         }
     ];
+
+    private fbEvents: Observable<FbEvent[]>;
+
+    constructor(private dataService: DataService) {}
+
+    public ngOnInit(): void {
+        this.fbEvents = this.dataService.events$;
+    }
 }

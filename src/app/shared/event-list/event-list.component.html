@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<h4>Upcoming Events</h4>
+<ng-container *ngIf="events && events.length > 0; else none">
+    <app-fb-event *ngFor="let event of events" [event]="event"></app-fb-event>
+</ng-container>
+<ng-template #none>
+    <p class="text-muted">No upcoming events.</p>
+</ng-template>
