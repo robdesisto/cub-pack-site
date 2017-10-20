@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
         }
     ];
 
-    private fbEvents: Observable<FbEvent[]>;
+    public fbEvents: Observable<FbEvent[]>;
 
     constructor(private dataService: DataService) {}
 
