@@ -1,8 +1,8 @@
 <footer class="text-muted text-center">
-    <p>&copy; {{today | date: 'y'}} - Cub Scout Pack 122 Coronado CA, 92118</p>
+    <p>&copy; {{today | date: 'y'}} {{orgName}} - {{orgLocation}}</p>
     <p>
-        <a href="https://www.facebook.com/pack122/" target="_blank">
-            <img class="social-icon" src="assets/facebook-icon.png" alt="Facebook"/>
+        <a *ngFor="let link of socialLinks" [attr.href]="link.url" target="_blank">
+            <img class="social-icon" src="assets/social/{{link.name}}.png" alt="{{link.name}}"/>
         </a>
     </p>
     <a href="https://www.netlify.com">

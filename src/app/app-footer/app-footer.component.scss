@@ -3,7 +3,12 @@
 :host {
     display: block;
     font-size: $font-size-sm;
-    padding: 1.5rem 1rem;
+}
+
+footer {
+    border-top: 1px solid $scout-blue-lightest;
+    margin-top: 1.5rem;
+    padding: 1.5rem 1rem 1rem;
 }
 
 p {

@@ -2,6 +2,7 @@ import {NgModule, Optional, SkipSelf} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FacebookService} from 'ngx-facebook';
 
+import {ConstantsService} from '@app/core/services/ConstantsService';
 import {DataService} from '@app/core/services/DataService';
 import {PageContentResolverService} from '@app/core/services/PageContentResolver';
 
@@ -11,6 +12,7 @@ import {PageContentResolverService} from '@app/core/services/PageContentResolver
     ],
     providers: [
         FacebookService,
+        ConstantsService,
         DataService,
         PageContentResolverService
     ]
