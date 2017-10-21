@@ -1,3 +1,7 @@
+/**
+ * Basic Org Info. Icons from:
+ * https://material.io/icons/
+ */
 import {Injectable} from '@angular/core';
 
 import {NavItem} from '@app/core/interfaces/NavItem';
