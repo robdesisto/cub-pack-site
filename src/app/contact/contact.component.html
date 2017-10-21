@@ -1,1 +1,10 @@
 <app-page-content [data]="pageData | async"></app-page-content>
+<article class="secondary-content">
+    <h2>Contact Us</h2>
+    <form name="contact" netlifty netlify-honeypot="bot-field">
+        <p class="hidden">
+            <label>Don’t fill this out: <input name="bot-field"></label>
+        </p>
+        <input type="hidden" name="form-name" value="contact" />
+    </form>
+</article>

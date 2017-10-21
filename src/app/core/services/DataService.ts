@@ -12,8 +12,7 @@ import {PageContent} from '@app/core/models/PageContent';
 import {FbEvent} from '@app/core/models/FbEvent';
 import {FbPost} from '@app/core/models/FbPost';
 
-// HACK: move out of here
-import {buildVars} from './build-vars';
+import {environment} from '@env/environment';
 
 @Injectable()
 export class DataService {
@@ -27,17 +26,18 @@ export class DataService {
     private contentful: any;
 
     constructor(private fb: FacebookService) {
-        this.contentful = contentful.createClient({
-            space: buildVars.cSpaceId,
-            accessToken: buildVars.cToken
-        });
-
-        this._pages$ = new BehaviorSubject<{[page: string]: PageContent}>(null);
-        this._posts$ = new BehaviorSubject<FbPost[]>(null);
-        this._events$ = new BehaviorSubject<FbEvent[]>(null);
-
-        this.loadFacebookContent();
-        this.loadCmsContent();
+        console.log(environment.secureThing);
+        // this.contentful = contentful.createClient({
+        //     space: buildVars.cSpaceId,
+        //     accessToken: buildVars.cToken
+        // });
+        //
+        // this._pages$ = new BehaviorSubject<{[page: string]: PageContent}>(null);
+        // this._posts$ = new BehaviorSubject<FbPost[]>(null);
+        // this._events$ = new BehaviorSubject<FbEvent[]>(null);
+        //
+        // this.loadFacebookContent();
+        // this.loadCmsContent();
     }
 
     get pages$(): Observable<{[page: string]: PageContent}> {
@@ -83,7 +83,7 @@ export class DataService {
 
     private loadFacebookContent(): void {
         const initParams: InitParams = {
-            appId: buildVars.fbId,
+            // appId: buildVars.fbId,
             xfbml: true,
             version: 'v2.10'
         };
@@ -96,7 +96,7 @@ export class DataService {
 
     private loadFacebookEvents(): void {
         this.fb.api('/pack122/events', 'get', {
-            access_token: buildVars.fbToken
+            // access_token: buildVars.fbToken
         })
             .then((res: any) => {
                 if (res.data && res.data.length > 0) {
@@ -113,7 +113,7 @@ export class DataService {
 
     private loadFacebookPosts(): void {
         this.fb.api('/pack122/posts', 'get', {
-            access_token: buildVars.fbToken
+            // access_token: buildVars.fbToken
         })
             .then((res: any) => {
                 if (res.data && res.data.length > 0) {
