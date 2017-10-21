@@ -1,0 +1,14 @@
+@import 'app.shared';
+
+:host {
+    display: block;
+    margin-bottom: 2rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.post-title {
+    margin-bottom: 0.5rem;
+}

@@ -22,6 +22,7 @@ dl {
         clear: left;
         color: $gray-light;
         float: left;
+        font-weight: 600;
 
         &::after {
             content: ':';

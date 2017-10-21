@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {RouterOutlet, RouterState} from '@angular/router';
 import {Observable} from 'rxjs/Observable';
 
@@ -14,7 +14,7 @@ import {ConstantsService} from '@app/core/services/ConstantsService';
     styleUrls: ['./app.component.scss'],
     animations: [routerTransition]
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
     public navItems: NavItem[];
 
@@ -22,9 +22,6 @@ export class AppComponent implements OnInit {
 
     constructor(private dataService: DataService, private constants: ConstantsService) {
         this.navItems = constants.navItems;
-    }
-
-    public ngOnInit(): void {
         this.fbEvents = this.dataService.events$;
     }
 

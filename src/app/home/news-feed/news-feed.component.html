@@ -1,0 +1,7 @@
+<h2>News and Updates</h2>
+<ng-container *ngIf="posts && posts.length > 0; else none">
+    <app-fb-post *ngFor="let post of posts" [post]="post"></app-fb-post>
+</ng-container>
+<ng-template #none>
+    <p class="text-muted">No recent news.</p>
+</ng-template>

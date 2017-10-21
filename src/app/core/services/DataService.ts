@@ -1,3 +1,4 @@
+// https://stackoverflow.com/questions/17197970/facebook-permanent-page-access-token
 import {Injectable} from '@angular/core';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {Observable} from 'rxjs/Observable';
@@ -6,6 +7,7 @@ import * as contentful from 'contentful';
 
 import {PageContent} from '@app/core/models/PageContent';
 import {FbEvent} from '@app/core/models/FbEvent';
+import {FbPost} from '@app/core/models/FbPost';
 
 // HACK: move out of here
 import {buildVars} from './build-vars';
@@ -15,6 +17,8 @@ export class DataService {
 
     private _pages: {[page: string]: PageContent};
     private _pages$: BehaviorSubject<{[page: string]: PageContent}>;
+    private _posts: FbPost[];
+    private _posts$: BehaviorSubject<FbPost[]>;
     private _events: FbEvent[];
     private _events$: BehaviorSubject<FbEvent[]>;
     private contentful: any;
@@ -25,10 +29,12 @@ export class DataService {
             accessToken: buildVars.cToken
         });
 
-        this._events$ = new BehaviorSubject<FbEvent[]>(null);
         this._pages$ = new BehaviorSubject<{[page: string]: PageContent}>(null);
-        this.loadEvents();
-        this.loadPages();
+        this._posts$ = new BehaviorSubject<FbPost[]>(null);
+        this._events$ = new BehaviorSubject<FbEvent[]>(null);
+
+        this.loadFacebookContent();
+        this.loadCmsContent();
     }
 
     get pages$(): Observable<{[page: string]: PageContent}> {
@@ -55,12 +61,24 @@ export class DataService {
 
         this._events = events.filter((event: FbEvent) => {
             return event.end.valueOf() > now;
-        });
+        }).reverse();
 
         this._events$.next(this._events);
     }
 
-    private loadEvents(): void {
+    get posts$(): Observable<FbPost[]> {
+        return this._posts$.asObservable();
+    }
+
+    set posts(posts: FbPost[]) {
+        this._posts = posts.filter((post: FbPost) => {
+            return post.message;
+        }).slice(0, 10);
+
+        this._posts$.next(this._posts);
+    }
+
+    private loadFacebookContent(): void {
         const initParams: InitParams = {
             appId: buildVars.fbId,
             xfbml: true,
@@ -68,9 +86,15 @@ export class DataService {
         };
 
         this.fb.init(initParams).then(() => {
-            this.fb.api('/pack122/events', 'get', {
-                access_token: buildVars.fbToken
-            })
+            this.loadFacebookEvents();
+            this.loadFacebookPosts();
+        });
+    }
+
+    private loadFacebookEvents(): void {
+        this.fb.api('/pack122/events', 'get', {
+            access_token: buildVars.fbToken
+        })
             .then((res: any) => {
                 if (res.data && res.data.length > 0) {
                     this.events = res.data.map((obj: {[prop: string]: string}) => {
@@ -82,10 +106,26 @@ export class DataService {
             }, (e: any) => {
                 console.error(e);
             });
-        });
     }
 
-    private loadPages(): void {
+    private loadFacebookPosts(): void {
+        this.fb.api('/pack122/posts', 'get', {
+            access_token: buildVars.fbToken
+        })
+            .then((res: any) => {
+                if (res.data && res.data.length > 0) {
+                    this.posts = res.data.map((obj: {[prop: string]: string}) => {
+                        return new FbPost(obj);
+                    });
+                } else {
+                    return [];
+                }
+            }, (e: any) => {
+                console.error(e);
+            });
+    }
+
+    private loadCmsContent(): void {
         this.contentful.getEntries()
             .then((res: any) => {
                 if (res.items && res.items.length > 0) {
