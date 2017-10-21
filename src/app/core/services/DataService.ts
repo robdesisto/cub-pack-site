@@ -1,4 +1,7 @@
-// https://stackoverflow.com/questions/17197970/facebook-permanent-page-access-token
+/**
+ * To create a permanent FB token see:
+ * https://stackoverflow.com/questions/17197970/facebook-permanent-page-access-token
+ */
 import {Injectable} from '@angular/core';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {Observable} from 'rxjs/Observable';
