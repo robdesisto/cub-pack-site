@@ -1,6 +1,6 @@
-type SECURE_THING = string;
+declare let ENV: any;
 
 export const environment = {
     production: true,
-    secureThing: SECURE_THING
+    secureThing: ENV['SECURE_THING']
 };
