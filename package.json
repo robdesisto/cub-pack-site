@@ -1,7 +1,7 @@
 {
   "name": "cub-pack-site",
   "description": "An open source project to let any cub scout pack quickly build an online presence.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "repository": {
     "type": "git",
