@@ -1,12 +1,8 @@
-/**
- * To create a permanent FB token see:
- * https://stackoverflow.com/questions/17197970/facebook-permanent-page-access-token
- */
 import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {Observable} from 'rxjs/Observable';
-import {FacebookService, InitParams} from 'ngx-facebook';
-import * as contentful from 'contentful';
+import 'rxjs/add/operator/toPromise';
 
 import {PageContent} from '@app/core/models/PageContent';
 import {FbEvent} from '@app/core/models/FbEvent';
@@ -23,21 +19,15 @@ export class DataService {
     private _posts$: BehaviorSubject<FbPost[]>;
     private _events: FbEvent[];
     private _events$: BehaviorSubject<FbEvent[]>;
-    private contentful: any;
 
-    constructor(private fb: FacebookService) {
-        console.log(environment.secureThing);
-        // this.contentful = contentful.createClient({
-        //     space: buildVars.cSpaceId,
-        //     accessToken: buildVars.cToken
-        // });
-        //
-        // this._pages$ = new BehaviorSubject<{[page: string]: PageContent}>(null);
-        // this._posts$ = new BehaviorSubject<FbPost[]>(null);
-        // this._events$ = new BehaviorSubject<FbEvent[]>(null);
-        //
-        // this.loadFacebookContent();
-        // this.loadCmsContent();
+    constructor(private http: HttpClient) {
+        this._pages$ = new BehaviorSubject<{[page: string]: PageContent}>(null);
+        this._posts$ = new BehaviorSubject<FbPost[]>(null);
+        this._events$ = new BehaviorSubject<FbEvent[]>(null);
+
+        this.loadFacebookEvents();
+        this.loadFacebookPosts();
+        this.loadCmsContent();
     }
 
     get pages$(): Observable<{[page: string]: PageContent}> {
@@ -81,23 +71,9 @@ export class DataService {
         this._posts$.next(this._posts);
     }
 
-    private loadFacebookContent(): void {
-        const initParams: InitParams = {
-            // appId: buildVars.fbId,
-            xfbml: true,
-            version: 'v2.10'
-        };
-
-        this.fb.init(initParams).then(() => {
-            this.loadFacebookEvents();
-            this.loadFacebookPosts();
-        });
-    }
-
     private loadFacebookEvents(): void {
-        this.fb.api('/pack122/events', 'get', {
-            // access_token: buildVars.fbToken
-        })
+        this.http.get(`${environment.apiUrl}fb/events`)
+            .toPromise()
             .then((res: any) => {
                 if (res.data && res.data.length > 0) {
                     this.events = res.data.map((obj: {[prop: string]: string}) => {
@@ -112,9 +88,8 @@ export class DataService {
     }
 
     private loadFacebookPosts(): void {
-        this.fb.api('/pack122/posts', 'get', {
-            // access_token: buildVars.fbToken
-        })
+        this.http.get(`${environment.apiUrl}fb/posts`)
+            .toPromise()
             .then((res: any) => {
                 if (res.data && res.data.length > 0) {
                     this.posts = res.data.map((obj: {[prop: string]: string}) => {
@@ -129,17 +104,18 @@ export class DataService {
     }
 
     private loadCmsContent(): void {
-        this.contentful.getEntries()
+        this.http.get(`${environment.apiUrl}cms/pages`)
+            .toPromise()
             .then((res: any) => {
-                if (res.items && res.items.length > 0) {
-                    this.pages = res.items.map((obj: {[prop: string]: string}) => {
-                        return new PageContent(obj);
-                    });
-                } else {
-                    return [];
-                }
-            }, (e: any) => {
-                console.error(e);
-            });
+            if (res.items && res.items.length > 0) {
+                this.pages = res.items.map((obj: {[prop: string]: string}) => {
+                    return new PageContent(obj);
+                });
+            } else {
+                return [];
+            }
+        }, (e: any) => {
+            console.error(e);
+        });
     }
 }

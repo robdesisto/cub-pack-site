@@ -1,4 +1,5 @@
 export const environment = {
     production: false,
-    hmr: true
+    hmr: true,
+    apiUrl: 'https://cub-pack-backend.herokuapp.com/'
 };
