@@ -10,7 +10,7 @@ export class FbEvent {
         this._id = fbObj.id;
         this._name = fbObj.name;
         this._description = fbObj.description;
-        this._end = new Date(fbObj.end_time);
+        this._end = fbObj.end_time ? new Date(fbObj.end_time) : null;
         this._start = new Date(fbObj.start_time);
     }
 

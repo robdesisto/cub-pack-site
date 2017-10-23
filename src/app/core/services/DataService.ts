@@ -50,12 +50,7 @@ export class DataService {
     }
 
     set events(events: FbEvent[]) {
-        const now: number = new Date().valueOf();
-
-        this._events = events.filter((event: FbEvent) => {
-            return event.end.valueOf() > now;
-        }).reverse();
-
+        this._events = events;
         this._events$.next(this._events);
     }
 
@@ -64,10 +59,7 @@ export class DataService {
     }
 
     set posts(posts: FbPost[]) {
-        this._posts = posts.filter((post: FbPost) => {
-            return post.message;
-        }).slice(0, 10);
-
+        this._posts = posts;
         this._posts$.next(this._posts);
     }
 
@@ -75,7 +67,7 @@ export class DataService {
         this.http.get(`${environment.apiUrl}fb/events`)
             .toPromise()
             .then((res: any) => {
-                if (res.data && res.data.length > 0) {
+                if (res.data.length > 0) {
                     this.events = res.data.map((obj: {[prop: string]: string}) => {
                         return new FbEvent(obj);
                     });
@@ -91,7 +83,7 @@ export class DataService {
         this.http.get(`${environment.apiUrl}fb/posts`)
             .toPromise()
             .then((res: any) => {
-                if (res.data && res.data.length > 0) {
+                if (res.data.length > 0) {
                     this.posts = res.data.map((obj: {[prop: string]: string}) => {
                         return new FbPost(obj);
                     });

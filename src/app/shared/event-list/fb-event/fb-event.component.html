@@ -3,8 +3,10 @@
     <dl class="time clearfix">
         <dt>Starts</dt>
         <dd>{{event.start | date: 'medium'}}</dd>
-        <dt>Ends</dt>
-        <dd>{{event.end | date: 'medium'}}</dd>
+        <ng-container *ngIf="event.end">
+            <dt>Ends</dt>
+            <dd>{{event.end | date: 'medium'}}</dd>
+        </ng-container>
     </dl>
     <p class="description">{{event.description}}</p>
 </div>
