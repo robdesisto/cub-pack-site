@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.0.4"></a>
+## [0.0.4](https://github.com/robdesisto/cub-pack-site/compare/v0.0.3...v0.0.4) (2017-10-23)
+
+
+### Bug Fixes
+
+* ISO date format breaks in Safari ([d3328c9](https://github.com/robdesisto/cub-pack-site/commit/d3328c9))
+
+
+
 <a name="0.0.3"></a>
 ## [0.0.3](https://github.com/robdesisto/cub-pack-site/compare/v0.0.2...v0.0.3) (2017-10-22)
 
