@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ChangeDetectionStrategy} from '@angular/core';
 import {RouterOutlet, RouterState} from '@angular/router';
 import {Observable} from 'rxjs/Observable';
 
@@ -12,7 +12,8 @@ import {ConstantsService} from '@app/core/services/ConstantsService';
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    animations: [routerTransition]
+    animations: [routerTransition],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
 
