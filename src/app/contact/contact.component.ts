@@ -1,11 +1,10 @@
-import {Component, ChangeDetectionStrategy} from '@angular/core';
+import {Component, ChangeDetectionStrategy, ChangeDetectorRef} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Observable} from 'rxjs/Observable';
 
 import {RouteData} from '@app/core/interfaces/RouteData';
 import {ContactService} from '@app/contact/services/ContactService';
-import {ContactFormResult} from '@app/contact/types/ContactFormResult';
 
 @Component({
     templateUrl: './contact.component.html',
@@ -16,9 +15,9 @@ export class ContactComponent {
 
     public pageData: Observable<RouteData>;
     public contactForm: FormGroup;
-    public sendResponse: ContactFormResult;
+    public messageSent: boolean;
 
-    constructor(private route: ActivatedRoute, private contactService: ContactService) {
+    constructor(private route: ActivatedRoute, private contactService: ContactService, private changeRef: ChangeDetectorRef) {
         this.pageData = this.route.data;
 
         this.contactForm = this.makeForm();
@@ -26,15 +25,10 @@ export class ContactComponent {
 
     public onSubmit(): void {
         if (this.contactForm.valid) {
-            this.contactService.sendContact(this.contactForm.value).then((result: ContactFormResult) => {
-                this.sendResponse = result;
-            });
+            this.contactService.sendContact(this.contactForm.value);
+            this.messageSent = true;
+            this.changeRef.markForCheck();
         }
-    }
-
-    public clearForm(): void {
-        this.contactForm = this.makeForm();
-        this.sendResponse = null;
     }
 
     private makeForm(): FormGroup {
