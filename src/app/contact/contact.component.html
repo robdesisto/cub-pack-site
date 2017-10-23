@@ -1,10 +1,45 @@
 <app-page-content [data]="pageData | async"></app-page-content>
 <article class="secondary-content">
     <h2>Contact Us</h2>
-    <!--<form name="contact" netlifty netlify-honeypot="bot-field">-->
-        <!--<p class="hidden">-->
-            <!--<label>Don’t fill this out: <input name="bot-field"></label>-->
-        <!--</p>-->
-        <!--<input type="hidden" name="form-name" value="contact" />-->
-    <!--</form>-->
+    <form name="contactForm" [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+        <ng-template [ngIf]="sendResponse">
+            <div *ngIf="sendResponse == 1; else sendError" class="alert alert-success">
+                <h4 class="alert-heading">Message Sent!</h4>
+                Your message has been sent to the pack leader who will respond as swiftly as possible.
+                <p class="text-center">
+                    <span class="btn btn-success" (click)="clearForm()">Okay</span>
+                </p>
+            </div>
+            <ng-template #sendError>
+                <div class="alert alert-danger">
+                    <h4 class="alert-heading">Something Went Wrong!</h4>
+                    Your message could not be sent. Please try again later.
+                    <p class="text-center">
+                        <span class="btn btn-danger" (click)="clearForm()">Okay</span>
+                    </p>
+                </div>
+            </ng-template>
+        </ng-template>
+        <mat-form-field>
+            <input formControlName="name" placeholder="Name" name="name" matInput />
+            <mat-error>Please enter your name.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input formControlName="email" placeholder="Email" name="email" matInput />
+            <mat-error>Please enter a valid email.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <textarea formControlName="message" placeholder="Message" name="email" matInput></textarea>
+            <mat-hint>How can we be of service?</mat-hint>
+            <mat-error>Please enter a valid message.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input formControlName="test" placeholder="Are you a person?" name="test" type="number" matInput />
+            <mat-error>Please enter a valid email.</mat-error>
+            <mat-hint>What does 2 + 2 equal?</mat-hint>
+        </mat-form-field>
+        <div class="controls">
+            <button class="btn btn-primary">Send</button>
+        </div>
+    </form>
 </article>

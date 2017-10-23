@@ -34,7 +34,18 @@ $brand-warning: $sea-gold;
 $brand-highlight: $cub-yellow;
 $brand-success: $ven-green;
 
+$theme-colors: (
+    primary: $scout-blue,
+    secondary: $cub-yellow,
+    success: $ven-green,
+    info: $scout-brown,
+    warning: $sea-gold,
+    danger: $scout-red,
+    light: $gray-lighter,
+    dark: $brand-primary
+);
+
 $shadow: rgba(0, 17, 34, 0.4);
 
-// functional
+// Functional
 $header-height: 4rem;

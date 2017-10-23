@@ -64,7 +64,7 @@ export class DataService {
     }
 
     private loadFacebookEvents(): void {
-        this.http.get(`${environment.apiUrl}fb/events`)
+        this.http.get(`${environment.apiUrl}/fb/events`)
             .toPromise()
             .then((res: any) => {
                 if (res.data.length > 0) {
@@ -80,7 +80,7 @@ export class DataService {
     }
 
     private loadFacebookPosts(): void {
-        this.http.get(`${environment.apiUrl}fb/posts`)
+        this.http.get(`${environment.apiUrl}/fb/posts`)
             .toPromise()
             .then((res: any) => {
                 if (res.data.length > 0) {
@@ -96,7 +96,7 @@ export class DataService {
     }
 
     private loadCmsContent(): void {
-        this.http.get(`${environment.apiUrl}cms/pages`)
+        this.http.get(`${environment.apiUrl}/cms/pages`)
             .toPromise()
             .then((res: any) => {
             if (res.items && res.items.length > 0) {
