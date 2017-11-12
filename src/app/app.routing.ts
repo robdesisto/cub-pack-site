@@ -7,21 +7,20 @@ import {NotFoundComponent} from '@app/not-found/not-found.component';
 const appRoutes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', loadChildren: './home/home.module#HomeModule'},
-    { path: 'program', loadChildren: './program/program.module#ProgramModule'},
-    { path: 'charter', loadChildren: './charter/charter.module#CharterModule'},
+    { path: 'page', loadChildren: './page/page.module#PageModule'},
     { path: 'connect', loadChildren: './contact/contact.module#ContactModule'},
     {
         path: 'error',
         component: ErrorComponent,
         data: {
-            title: 'Oops.'
+            page: 'error'
         }
     },
     {
         path: '**',
         component: NotFoundComponent,
         data: {
-            title: 'A Scout has lost the path.'
+            page: 'not-found'
         }
     }
 ];

@@ -9,7 +9,6 @@ const homeRoutes: Routes = [
         path: '',
         component: HomeComponent,
         data: {
-            title: 'Home',
             page: 'home'
         },
         resolve: {

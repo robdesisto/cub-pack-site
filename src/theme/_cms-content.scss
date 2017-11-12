@@ -1,8 +1,11 @@
 @import 'app.shared';
 
 .cms-content {
+    h3 {
+        margin-top: 2rem;
+    }
+
     img {
-        border: 1px solid $scout-blue-light;
         border-radius: 0.25rem;
         display: block;
         margin: 2rem auto;
@@ -10,6 +13,6 @@
     }
 
     strong {
-        color: $scout-blue-dark;
+        color: $scout-blue;
     }
 }

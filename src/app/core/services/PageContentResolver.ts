@@ -14,7 +14,7 @@ export class PageContentResolverService {
     constructor(private router: Router, private dataService: DataService) {}
 
     protected resolve(route: ActivatedRouteSnapshot): Observable<PageContent> {
-        const id = route.data['page'];
+        const id = route.params['id'] || route.data['page'];
 
         return this.dataService.pages$
             .first((data: any) => data !== null)

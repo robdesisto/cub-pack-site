@@ -1,17 +1,13 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
-import {CharterComponent} from '@app/charter/charter.component';
+import {PageComponent} from '@app/page/page.component';
 import {PageContentResolverService} from '@app/core/services/PageContentResolver';
 
-const homeRoutes: Routes = [
+const pageRoutes: Routes = [
     {
-        path: '',
-        component: CharterComponent,
-        data: {
-            title: 'Our Charter',
-            page: 'charter'
-        },
+        path: ':id',
+        component: PageComponent,
         resolve: {
             content: PageContentResolverService
         }
@@ -20,11 +16,11 @@ const homeRoutes: Routes = [
 
 @NgModule({
     imports: [
-        RouterModule.forChild(homeRoutes)
+        RouterModule.forChild(pageRoutes)
     ],
     exports: [
         RouterModule
     ],
     providers: []
 })
-export class CharterRoutingModule { }
+export class PageRoutingModule { }

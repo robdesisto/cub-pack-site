@@ -5,10 +5,10 @@ import {Observable} from 'rxjs/Observable';
 import {RouteData} from '@app/core/interfaces/RouteData';
 
 @Component({
-    templateUrl: './program.component.html',
+    template: '<app-page-content [data]="pageData | async"></app-page-content>',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ProgramComponent {
+export class PageComponent {
 
     public pageData: Observable<RouteData>;
 

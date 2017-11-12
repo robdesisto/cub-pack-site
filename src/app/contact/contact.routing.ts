@@ -4,13 +4,12 @@ import {Routes, RouterModule} from '@angular/router';
 import {ContactComponent} from '@app/contact/contact.component';
 import {PageContentResolverService} from '@app/core/services/PageContentResolver';
 
-const homeRoutes: Routes = [
+const contactRoutes: Routes = [
     {
         path: '',
         component: ContactComponent,
         data: {
-            title: 'Contact Us',
-            page: 'contact'
+            page: 'connect'
         },
         resolve: {
             content: PageContentResolverService
@@ -20,7 +19,7 @@ const homeRoutes: Routes = [
 
 @NgModule({
     imports: [
-        RouterModule.forChild(homeRoutes)
+        RouterModule.forChild(contactRoutes)
     ],
     exports: [
         RouterModule
