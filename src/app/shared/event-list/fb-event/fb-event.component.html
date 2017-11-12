@@ -1,12 +1,9 @@
-<h5 class="event-name">{{event.name}}</h5>
+<h5 class="event-name">
+    {{event.name}}
+    <em class="date">
+        {{event.start | date: 'mediumDate'}}
+    </em>
+</h5>
 <div class="event-details">
-    <dl class="time clearfix">
-        <dt>Starts</dt>
-        <dd>{{event.start | date: 'medium'}}</dd>
-        <ng-container *ngIf="event.end">
-            <dt>Ends</dt>
-            <dd>{{event.end | date: 'medium'}}</dd>
-        </ng-container>
-    </dl>
     <p class="description">{{event.description}}</p>
 </div>

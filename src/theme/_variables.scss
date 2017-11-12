@@ -14,11 +14,12 @@ $sea-gold-dark: #960;
 $ven-green: #006b3f;
 
 // Derivatives - complimentary colors derived from the scout palette
-$scout-blue-dark: $sea-blue-dark;
-$scout-blue-darker: #012;
-$scout-blue-light: #336299;
-$scout-blue-lighter: #99c8ff;
-$scout-blue-lightest: #cce3ff;
+$scout-blue-darker: #000f21;
+$scout-blue-dark: #002754;
+$scout-blue-light: #004aa0;
+$scout-blue-lighter: #3a96ff;
+$scout-blue-lightest: #badaff;
+$scout-blue-super-light: #d3e7ff;
 
 $gray: #2b2b2b;
 $gray-dark: #111110;
@@ -45,6 +46,7 @@ $theme-colors: (
     dark: $brand-primary
 );
 
+$fore-border-color: $scout-blue-super-light;
 $shadow: rgba(0, 17, 34, 0.4);
 
 // Functional

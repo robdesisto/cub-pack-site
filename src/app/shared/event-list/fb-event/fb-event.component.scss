@@ -7,32 +7,20 @@
 
 .event-name {
     color: $scout-blue;
-    font-weight: 500;
+    font-weight: 400;
     margin-bottom: 0.5rem;
+
+    .date {
+        color: $sea-blue-light;
+        display: block;
+        font-size: $font-size-sm;
+        font-weight: 300;
+        margin-top: 0.25rem;
+    }
 }
 
 .event-details {
     font-size: $font-size-sm;
-}
-
-dl {
-    margin-bottom: 0.25rem;
-
-    dt {
-        clear: left;
-        color: $gray-light;
-        float: left;
-        font-weight: 600;
-
-        &::after {
-            content: ':';
-        }
-    }
-
-    dd {
-        float: left;
-        margin: 0 0 0 0.5rem;
-    }
 }
 
 .description {
