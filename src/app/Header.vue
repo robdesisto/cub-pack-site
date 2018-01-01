@@ -39,7 +39,7 @@
         .navbar-brand {
             color: white;
             font-weight: 400;
-            letter-spacing: 0.1rem;
+            letter-spacing: 0.07rem;
             padding-left: 3.7rem;
             position: relative;
 
