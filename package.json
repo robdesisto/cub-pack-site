@@ -1,62 +1,62 @@
 {
-    "name": "cub-pack-site",
-    "description": "An open source project to let any cub scout pack quickly build an online presence.",
-    "version": "0.0.7",
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/robdesisto/cub-pack-site.git"
-    },
-    "keywords": [
-        "cub scouts",
-        "scouting"
-    ],
-    "author": "Rob DeSisto",
-    "scripts": {
-        "start": "webpack-dev-server --inline --progress --port 8122"
-    },
-    "dependencies": {
-        "bootstrap": "~4.0.0-beta.3",
-        "markdown": "0.5.0",
-        "vue": "^2.5.13",
-        "vue-class-component": "^6.1.2",
-        "vue-property-decorator": "^6.0.0",
-        "vue-router": "^3.0.1",
-        "vuex": "^3.0.1"
-    },
-    "devDependencies": {
-        "awesome-typescript-loader": "^3.4.1",
-        "babel-core": "^6.26.0",
-        "babel-helper-vue-jsx-merge-props": "^2.0.2",
-        "babel-plugin-syntax-dynamic-import": "^6.18.0",
-        "babel-plugin-syntax-jsx": "^6.18.0",
-        "babel-plugin-transform-vue-jsx": "^3.4.3",
-        "babel-preset-env": "^1.6.0",
-        "css-loader": "^0.28.7",
-        "html-webpack-plugin": "~2.30.1",
-        "jasmine-core": "~2.6.2",
-        "jasmine-spec-reporter": "~4.1.0",
-        "jquery": "^3.2.1",
-        "karma": "~1.7.0",
-        "karma-chrome-launcher": "~2.1.1",
-        "karma-cli": "~1.0.1",
-        "karma-coverage-istanbul-reporter": "~1.2.1",
-        "karma-jasmine": "~1.1.0",
-        "karma-jasmine-html-reporter": "~0.2.2",
-        "optimize-css-assets-webpack-plugin": "^3.2.0",
-        "popper.js": "^1.12.5",
-        "postcss": "~6.0.13",
-        "standard-version": "^4.2.0",
-        "style-loader": "^0.19.1",
-        "stylelint": "~8.0.0",
-        "stylelint-config-standard": "^17.0.0",
-        "tslint": "~5.8.0",
-        "typescript": "~2.6.2",
-        "vue-loader": "^13.6.2",
-        "vue-template-compiler": "^2.5.13",
-        "vue-ts-loader": "0.0.3",
-        "webpack": "^3.10.0",
-        "webpack-dev-server": "~2.9.7",
-        "webpack-merge": "^4.1.1"
-    }
+  "name": "cub-pack-site",
+  "description": "An open source project to let any cub scout pack quickly build an online presence.",
+  "version": "0.0.7",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robdesisto/cub-pack-site.git"
+  },
+  "keywords": [
+    "cub scouts",
+    "scouting"
+  ],
+  "author": "Rob DeSisto",
+  "scripts": {
+    "start": "webpack-dev-server --progress --port 8122"
+  },
+  "dependencies": {
+    "bootstrap": "~4.0.0-beta.3",
+    "markdown": "0.5.0",
+    "vue": "^2.5.13",
+    "vue-class-component": "^6.1.2",
+    "vue-property-decorator": "^6.0.0",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-helper-vue-jsx-merge-props": "^2.0.2",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-vue-jsx": "^3.4.3",
+    "babel-preset-env": "^1.6.0",
+    "css-loader": "^0.28.7",
+    "html-webpack-plugin": "~2.30.1",
+    "jasmine-core": "~2.6.2",
+    "jasmine-spec-reporter": "~4.1.0",
+    "jquery": "^3.2.1",
+    "karma": "~1.7.0",
+    "karma-chrome-launcher": "~2.1.1",
+    "karma-cli": "~1.0.1",
+    "karma-coverage-istanbul-reporter": "~1.2.1",
+    "karma-jasmine": "~1.1.0",
+    "karma-jasmine-html-reporter": "~0.2.2",
+    "optimize-css-assets-webpack-plugin": "^3.2.0",
+    "popper.js": "^1.12.5",
+    "postcss": "~6.0.13",
+    "standard-version": "^4.2.0",
+    "style-loader": "^0.19.1",
+    "stylelint": "~8.0.0",
+    "stylelint-config-standard": "^17.0.0",
+    "tslint": "~5.8.0",
+    "typescript": "~2.6.2",
+    "vue-loader": "^13.6.2",
+    "vue-template-compiler": "^2.5.13",
+    "vue-ts-loader": "0.0.3",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "~2.9.7",
+    "webpack-merge": "^4.1.1"
+  }
 }

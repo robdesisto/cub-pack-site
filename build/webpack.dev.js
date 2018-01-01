@@ -6,7 +6,6 @@ const helpers = require('./helpers');
 module.exports = {
     entry: {
         main: './src/main.ts',
-        vendor: ['vue', 'vue-property-decorator', 'vue-router', 'vuex'],
         styles: helpers.root('src/styles.scss')
     },
     output: {
@@ -15,7 +14,7 @@ module.exports = {
         filename: '[name].js'
     },
     resolve: {
-        extensions: ['.ts', '.tsx', '.js'],
+        extensions: ['.ts', '.tsx', '.js', 'vue'],
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
             '@app': helpers.root('src/app')
@@ -35,7 +34,8 @@ module.exports = {
                         sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
                     }
                     // other vue-loader options go here
-                }
+                },
+                exclude: [/\.scss$/]
             },
             {
                 test: /\.js$/,
@@ -44,10 +44,10 @@ module.exports = {
             },
             {
                 test: /\.tsx?$/,
-                loader: 'awesome-typescript-loader',
+                loader: 'ts-loader',
                 exclude: /node_modules/,
                 options: {
-                    useBabel: true
+                    appendTsSuffixTo: [/\.vue$/]
                 }
             },
             {

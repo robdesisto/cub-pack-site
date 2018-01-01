@@ -1,8 +1,7 @@
 {
     "compileOnSave": false,
     "compilerOptions": {
-        "outDir": "./dist/",
-        "baseUrl": "src",
+        "baseUrl": "./src",
         "sourceMap": true,
         "declaration": false,
         "isolatedModules": false,
@@ -26,13 +25,10 @@
         "paths": {
             "@app/*": ["app/*"],
             "@env/*": ["environments/*"]
-        },
-        "include": [
-            "./src/**/*.ts"
-        ],
-        "exclude": [
-            "node_modules",
-            "build"
-        ]
-    }
+        }
+    },
+    "exclude": [
+        "node_modules",
+        "build"
+    ]
 }
