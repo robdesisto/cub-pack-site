@@ -29,7 +29,7 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "../sass/app.shared";
+    @import '../sass/app.shared';
 
     footer {
         border-top: 1px solid $fore-border-color;
