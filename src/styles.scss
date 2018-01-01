@@ -1,6 +1,5 @@
-@import 'cub-scout.theme';
-@import 'app.shared';
-@import 'cms-content';
+@import './sass/app.shared';
+@import './sass/cms-content';
 @import "~bootstrap/scss/reboot";
 @import "~bootstrap/scss/buttons";
 @import "~bootstrap/scss/type";
@@ -44,8 +43,7 @@ h2 {
 
 html,
 body,
-app-root,
-mat-sidenav-container,
+.app,
 .main {
     margin: 0;
     width: 100%;
@@ -66,13 +64,4 @@ mat-sidenav-container,
 .content-wrapper {
     min-height: calc(100% - 11rem);
     padding-top: 6rem;
-}
-
-.mat-drawer-container {
-    color: $gray;
-}
-
-.mat-drawer {
-    background-color: $scout-blue;
-    width: 250px;
 }

@@ -1,17 +1,24 @@
 {
     "compileOnSave": false,
     "compilerOptions": {
+        "outDir": "./dist/",
         "baseUrl": "src",
         "sourceMap": true,
         "declaration": false,
+        "isolatedModules": false,
         "moduleResolution": "node",
+        "module": "esnext",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
         "strict": true,
-        "target": "es5",
+        "target": "es2017",
         "typeRoots": [
-            "node_modules/@types"
+            "node_modules/@types",
+            "./src/types"
         ],
+        "jsx": "preserve",
+        "jsxFactory": "h",
         "lib": [
             "es2017",
             "dom"
@@ -19,6 +26,13 @@
         "paths": {
             "@app/*": ["app/*"],
             "@env/*": ["environments/*"]
-        }
+        },
+        "include": [
+            "./src/**/*.ts"
+        ],
+        "exclude": [
+            "node_modules",
+            "build"
+        ]
     }
 }
