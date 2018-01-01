@@ -1,12 +1,9 @@
-import {enableProdMode} from '@angular/core';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import Vue from 'vue';
 
-import {AppModule} from '@app/app.module';
-import {environment} from '@env/environment';
+import {App} from '@app/App.component';
 
-if (environment.production) {
-  enableProdMode();
-}
-
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.log(err));
+new Vue({
+    el: '#app',
+    template: '<App/>',
+    components: { App }
+});
