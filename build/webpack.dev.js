@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const helpers = require('./helpers');
@@ -36,11 +37,6 @@ module.exports = {
                     // other vue-loader options go here
                 },
                 exclude: [/\.scss$/]
-            },
-            {
-                test: /\.js$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/
             },
             {
                 test: /\.tsx?$/,
@@ -86,8 +82,12 @@ module.exports = {
         new webpack.DefinePlugin({
             'process.env': require('../src/environments/dev.env')
         }),
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NamedModulesPlugin()
+        new webpack.NamedModulesPlugin(),
+        new CopyWebpackPlugin(
+            [
+                { from: helpers.root('src/assets'), to: helpers.root('dist/assets') },
+            ]
+        )
     ]
 };
 
