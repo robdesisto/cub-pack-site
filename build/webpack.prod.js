@@ -1,6 +1,9 @@
 const webpack = require('webpack');
+const CleanPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const helpers = require('./helpers');
 
@@ -11,10 +14,11 @@ module.exports = {
     output: {
         path: helpers.root('dist'),
         publicPath: '/',
-        filename: '[name].js'
+        filename: '[name].[hash].js'
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js', 'vue'],
+        modules: ['node_modules'],
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
             '@app': helpers.root('src/app')
@@ -47,7 +51,10 @@ module.exports = {
             },
             {
                 test: /\.scss/,
-                loaders: ['style-loader', 'css-loader', 'sass-loader'],
+                loader: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: "css-loader!sass-loader"
+                }),
                 exclude: [/\.vue/]
             },
             {
@@ -59,49 +66,20 @@ module.exports = {
             }
         ]
     },
-    devServer: {
-        historyApiFallback: true,
-        noInfo: true,
-        overlay: true,
-        compress: true,
-        stats: 'minimal',
-        proxy: {
-            '/api': {
-                target: 'http://localhost:3001',
-                changeOrigin: true,
-                secure: false
-            }
-        }
-    },
-    performance: {
-        hints: false
-    },
-    devtool: 'cheap-module-eval-source-map',
+    devtool: 'source-map',
     plugins: [
+        new CleanPlugin(['dist'], { root: helpers.root() }),
         new HtmlWebpackPlugin({ template: 'src/index.html'}),
         new webpack.DefinePlugin({
-            'process.env': require('../src/environments/dev.env')
+            'process.env': require('../src/environments/prod.env')
         }),
         new webpack.NamedModulesPlugin(),
+        new ExtractTextPlugin('styles.[hash].css'),
         new CopyWebpackPlugin(
             [
                 { from: helpers.root('src/assets'), to: helpers.root('dist/assets') },
             ]
-        )
-    ]
-};
-
-/*
-
-if (process.env.NODE_ENV === 'production') {
-    module.exports.devtool = '#source-map';
-    // http://vue-loader.vuejs.org/en/workflow/production.html
-    module.exports.plugins = (module.exports.plugins || []).concat([
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: '"production"'
-            }
-        }),
+        ),
         new webpack.optimize.UglifyJsPlugin({
             sourceMap: true,
             compress: {
@@ -110,6 +88,12 @@ if (process.env.NODE_ENV === 'production') {
         }),
         new webpack.LoaderOptionsPlugin({
             minimize: true
+        }),
+        new OptimizeCssAssetsPlugin({
+            assetNameRegExp: /\.css$/g,
+            cssProcessor: require('cssnano'),
+            cssProcessorOptions: { discardComments: {removeAll: true } },
+            canPrint: true
         })
-    ]);
-} */
+    ]
+};

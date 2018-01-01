@@ -13,7 +13,8 @@
     ],
     "author": "Rob DeSisto",
     "scripts": {
-        "build": "webpack --config build/webpack.prod.js",
+        "build": "webpack",
+        "build:prod": "webpack --config build/webpack.prod.js",
         "lint": "npm run lint:style && npm run lint:ts",
         "lint:style": "stylelint \"src/**/*.scss\"",
         "lint:ts": "tslint \"src/**/*.ts\"",

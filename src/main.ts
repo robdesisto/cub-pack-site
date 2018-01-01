@@ -1,5 +1,7 @@
 import Vue from 'vue';
 
+import './styles.scss';
+
 import CubApp from '@app/App.vue';
 
 const v = new Vue({
