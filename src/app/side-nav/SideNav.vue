@@ -30,14 +30,14 @@
         position: absolute;
         top: 0;
         transform: translate3d(-100%, 0, 0);
-        transition: transform 0.4s ease-out;
+        transition: transform 0.4s ease;
 
         width: 280px;
         z-index: 104;
 
         &.active {
             transform: translate3d(0, 0, 0);
-            transition: transform 0.3s ease-out;
+            transition: transform 0.4s ease;
             visibility: visible;
         }
     }

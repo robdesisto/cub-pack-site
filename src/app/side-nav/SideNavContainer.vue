@@ -29,7 +29,7 @@
         &.active {
             .overlay {
                 opacity: 0.6;
-                transition: opacity 0.3s ease-out, visibility 0.01s;
+                transition: opacity 0.4s ease, visibility 0.01s;
                 visibility: visible;
                 z-index: 101;
             }
@@ -43,7 +43,7 @@
         opacity: 0;
         position: absolute;
         right: 0;
-        transition: opacity 0.3s ease-out, visibility 0.05s 0.4s;
+        transition: opacity 0.4s ease, visibility 0.05s 0.41s;
         top: 0;
         visibility: hidden;
     }

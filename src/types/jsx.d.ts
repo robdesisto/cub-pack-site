@@ -1,3 +1,4 @@
+/* tslint:disable */
 declare namespace JSX {
     interface Element { }
 
