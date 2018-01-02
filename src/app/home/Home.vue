@@ -1,6 +1,6 @@
 <template>
     <div class="page">
-        This is the home page.
+        <cub-page-content v-bind:content="pageContent"></cub-page-content>
         <cub-news-feed v-bind:posts="fbPosts"></cub-news-feed>
     </div>
 </template>
@@ -10,6 +10,7 @@
     import {Component} from 'vue-property-decorator';
 
     import {FbPost} from '@app/store/models/FbPost';
+    import {PageContent} from '@app/store/models/PageContent';
     import CubNewsFeed from '@app/home/news-feed/NewsFeed.vue'
 
     @Component({
@@ -18,6 +19,10 @@
     export default class Home extends Vue {
         get fbPosts(): FbPost[] | null {
             return this.$store.state.posts;
+        }
+
+        get pageContent(): PageContent | null {
+            return this.$store.getters.pageContent('home');
         }
 
         constructor($store: any) {

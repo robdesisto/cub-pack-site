@@ -19,7 +19,10 @@ const initialState: AppState = {
 export const store = new Vuex.Store({
     state: initialState,
     getters: {
-        navItems: navItemGetter
+        navItems: navItemGetter,
+        pageContent: (state: AppState) => (id: string): PageContent | null => {
+            return state.pages ? state.pages[id] : null;
+        }
     },
     mutations: {
         setFbEvents: (state: AppState, events: FbEvent[]) => {

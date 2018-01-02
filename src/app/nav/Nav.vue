@@ -44,7 +44,7 @@
 
     nav >>> header {
         box-shadow: none;
-        padding: 0.3rem 0;
+        padding: 0.3rem 0 0.25rem;
         position: relative;
         top: auto;
     }

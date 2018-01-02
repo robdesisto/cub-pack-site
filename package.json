@@ -19,7 +19,7 @@
         "lint:style": "stylelint \"src/**/*.scss\"",
         "lint:ts": "tslint \"src/**/*.ts\"",
         "release": "standard-version --prerelease && node scripts/push-tag.js",
-        "start": "webpack-dev-server --progress --port 8122"
+        "start": "webpack-dev-server --hot --progress --port 8122"
     },
     "dependencies": {
         "bootstrap": "~4.0.0-beta.3",
