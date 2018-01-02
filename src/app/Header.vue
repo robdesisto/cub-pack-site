@@ -13,7 +13,7 @@
     import Vue from 'vue';
     import {Component} from 'vue-property-decorator';
 
-    import {AppConstants} from '@app/core/AppConstants';
+    import {AppConstants} from '@app/store/AppConstants';
 
     @Component
     export default class CubHeader extends Vue {

@@ -33,8 +33,8 @@ import CubNavItem from '@app/nav/NavItem.vue';
 import CubNav from '@app/nav/Nav.vue';
 import CubNavContainer from '@app/nav/NavContainer.vue';
 
-import {NavItem} from '@app/core/interfaces/NavItem';
-import {FbEvent} from '@app/core/models/FbEvent';
+import {NavItem} from '@app/store/interfaces/NavItem';
+import {FbEvent} from '@app/store/models/FbEvent';
 
 @Component({
     components: {CubEventList, CubFooter, CubHeader, CubNavContainer, CubNav, CubNavItem}

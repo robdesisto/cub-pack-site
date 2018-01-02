@@ -1,12 +1,12 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import {AppConstants} from '@app/core/AppConstants';
-import {AppState} from '@app/core/interfaces/AppState';
-import {navItemGetter} from '@app/core/getters/NavItemGetter';
-import {FbEvent} from '@app/core/models/FbEvent';
-import {FbPost} from '@app/core/models/FbPost';
-import {PageContent} from '@app/core/models/PageContent';
+import {AppConstants} from '@app/store/AppConstants';
+import {AppState} from '@app/store/interfaces/AppState';
+import {navItemGetter} from '@app/store/getters/NavItemGetter';
+import {FbEvent} from '@app/store/models/FbEvent';
+import {FbPost} from '@app/store/models/FbPost';
+import {PageContent} from '@app/store/models/PageContent';
 
 Vue.use(Vuex);
 

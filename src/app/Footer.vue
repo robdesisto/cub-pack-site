@@ -16,8 +16,8 @@
     import Vue from 'vue';
     import {Component} from 'vue-property-decorator';
 
-    import {AppConstants} from '@app/core/AppConstants';
-    import {SocialLink} from '@app/core/interfaces/SocialLink';
+    import {AppConstants} from '@app/store/AppConstants';
+    import {SocialLink} from '@app/store/interfaces/SocialLink';
 
     @Component
     export default class CubFooter extends Vue {

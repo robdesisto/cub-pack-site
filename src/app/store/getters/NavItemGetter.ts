@@ -1,7 +1,7 @@
-import {AppConstants} from '@app/core/AppConstants';
-import {AppState} from '@app/core/interfaces/AppState';
-import {PageContent} from '@app/core/models/PageContent';
-import {NavItem} from '@app/core/interfaces/NavItem';
+import {AppConstants} from '@app/store/AppConstants';
+import {AppState} from '@app/store/interfaces/AppState';
+import {PageContent} from '@app/store/models/PageContent';
+import {NavItem} from '@app/store/interfaces/NavItem';
 
 export function navItemGetter(state: AppState): NavItem[] | null {
     const navItems: NavItem[] = [];

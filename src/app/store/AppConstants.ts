@@ -1,4 +1,4 @@
-import {SocialLink} from '@app/core/interfaces/SocialLink';
+import {SocialLink} from '@app/store/interfaces/SocialLink';
 
 export class AppConstants {
 

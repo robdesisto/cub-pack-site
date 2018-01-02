@@ -9,7 +9,7 @@
     import Vue from 'vue';
     import {Component, Prop} from 'vue-property-decorator';
 
-    import {NavItem} from '@app/core/interfaces/NavItem';
+    import {NavItem} from '@app/store/interfaces/NavItem';
 
     @Component
     export default class CubNavItem extends Vue {

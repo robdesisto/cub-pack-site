@@ -10,7 +10,7 @@
     import Vue from 'vue';
     import {Component, Prop} from 'vue-property-decorator';
 
-    import {FbEvent} from '@app/core/models/FbEvent';
+    import {FbEvent} from '@app/store/models/FbEvent';
     import CubEventItem from '@app/events/EventItem.vue';
 
     @Component({

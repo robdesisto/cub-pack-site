@@ -16,7 +16,7 @@
     import Vue from 'vue';
     import {Component, Prop} from 'vue-property-decorator';
 
-    import {FbEvent} from '@app/core/models/FbEvent';
+    import {FbEvent} from '@app/store/models/FbEvent';
 
     @Component
     export default class CubEventItem extends Vue {
