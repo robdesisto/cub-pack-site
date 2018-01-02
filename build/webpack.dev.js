@@ -64,14 +64,7 @@ module.exports = {
         noInfo: true,
         overlay: true,
         compress: true,
-        stats: 'minimal',
-        proxy: {
-            '/api': {
-                target: 'http://localhost:3001',
-                changeOrigin: true,
-                secure: false
-            }
-        }
+        stats: 'minimal'
     },
     performance: {
         hints: false
