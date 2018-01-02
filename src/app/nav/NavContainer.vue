@@ -12,7 +12,7 @@
     @Component
     export default class CubNavContainer extends Vue {
         @Prop() public active: boolean;
-        @Emit('hideNav') hideNav(): void {}
+        @Emit('hideNav') public hideNav(): void {}
     }
 </script>
 

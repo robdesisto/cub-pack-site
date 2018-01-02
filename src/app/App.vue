@@ -1,7 +1,7 @@
 <template>
     <cub-nav-container v-bind:active="navActive" v-on:hideNav="hideNav()">
         <cub-nav v-bind:active="navActive">
-            <cub-nav-item v-for="item in navItems" :key="item.url" v-bind:item="item" @click="hideNav()"></cub-nav-item>
+            <cub-nav-item v-for="item in navItems" :key="item.url" v-bind:item="item" v-on:hideNav="hideNav()"></cub-nav-item>
         </cub-nav>
         <section class="main">
             <cub-header>
