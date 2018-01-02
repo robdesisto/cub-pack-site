@@ -6,14 +6,17 @@
 
 <script lang="ts">
     import Vue from 'vue';
-    import {Component} from 'vue-property-decorator';
+    import {Component, Prop} from 'vue-property-decorator';
 
     import {PageContent} from '@app/store/models/PageContent';
 
     @Component
     export default class Page extends Vue {
+
+        @Prop() public id: string;
+
         get pageContent(): PageContent | null {
-            return this.$store.getters.pageContent('about');
+            return  this.id ? this.$store.getters.pageContent(this.id) : null;
         }
 
         constructor($store: any) {

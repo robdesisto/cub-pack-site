@@ -8,9 +8,8 @@ import {store} from '@app/store/store';
 import '@app/common';
 
 const v = new Vue({
-    el: '#app',
     router,
     store,
     template: '<cub-app/>',
     components: { CubApp }
-});
+}).$mount('#app');

@@ -15,7 +15,7 @@ export function navItemGetter(state: AppState): NavItem[] | null {
 
     AppConstants.pinnedPages.forEach((pageId: string) => {
         navItems.push({
-            url: pageId,
+            url: `/${pageId}`,
             label: pageId,
             icon: pages[pageId].icon
         });
@@ -24,7 +24,7 @@ export function navItemGetter(state: AppState): NavItem[] | null {
     Object.keys(pages).sort().forEach((pageId: string) => {
         if (AppConstants.pinnedPages.indexOf(pageId) === -1 && AppConstants.anchoredPages.indexOf(pageId)) {
             navItems.push({
-                url: `page/${pageId}`,
+                url: `/page/${pageId}`,
                 label: pageId,
                 icon: pages[pageId].icon
             });
@@ -33,7 +33,7 @@ export function navItemGetter(state: AppState): NavItem[] | null {
 
     AppConstants.anchoredPages.forEach((pageId: string) => {
         navItems.push({
-            url: pageId,
+            url: `/${pageId}`,
             label: pageId,
             icon: pages[pageId].icon
         });
