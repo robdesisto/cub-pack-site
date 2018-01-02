@@ -10,7 +10,9 @@
             <div class="content-wrapper container">
                 <div class="row">
                     <div class="col-12 col-md-8 col-lg-9">
-                        <router-view></router-view>
+                        <transition name="fade" mode="out-in">
+                            <router-view></router-view>
+                        </transition>
                     </div>
                     <div class="col-12 col-md-4 col-lg-3">
                         <cub-event-list v-bind:events="fbEvents"></cub-event-list>

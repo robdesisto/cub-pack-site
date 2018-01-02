@@ -1,14 +1,16 @@
 <template>
     <footer class="text-muted text-center">
-    <p>&copy; {{year}} {{orgName}} - {{location}}</p>
-    <p>
-    <a v-for="link in socialLinks" v-bind:href="link.url" target="_blank">
-        <img class="social-icon" v-bind:src="'/assets/social/' + link.name + '.png'" v-bind:alt="link.name"/>
-    </a>
-    </p>
-    <a href="//www.netlify.com">
-        <img src="//www.netlify.com/img/global/badges/netlify-dark.svg"/>
-    </a>
+        <div class="container">
+            <p>&copy; {{year}} {{orgName}} - {{location}}</p>
+            <p>
+                <a v-for="link in socialLinks" v-bind:href="link.url" target="_blank">
+                    <img class="social-icon" v-bind:src="'/assets/social/' + link.name + '.png'" v-bind:alt="link.name"/>
+                </a>
+            </p>
+            <a href="//www.netlify.com">
+                <img src="//www.netlify.com/img/global/badges/netlify-dark.svg"/>
+            </a>
+        </div>
     </footer>
 </template>
 
@@ -32,9 +34,12 @@
     @import '../sass/app.shared';
 
     footer {
-        border-top: 1px solid $fore-border-color;
         font-size: $font-size-sm;
         margin-top: 1.5rem;
+    }
+
+    .container {
+        border-top: 1px solid $fore-border-color;
         padding: 1.5rem 1rem 1rem;
     }
 
