@@ -1,4 +1,4 @@
-# Cub Pack Site
+# Cub Scout Pack Client App
 
 This is a simple site developed to give a Cub Scout Pack a public facing presence while attempting to limit overhead
 for the non-technical types. The idea behind it was to leverage existing data (and - failing that - a CMS) so that the 
