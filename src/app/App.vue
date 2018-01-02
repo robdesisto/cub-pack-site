@@ -10,7 +10,7 @@
             <div class="content-wrapper container">
                 <div class="row">
                     <div class="col-12 col-md-8 col-lg-9">
-                        <!--<router-outlet></router-outlet>-->
+                        <router-view></router-view>
                     </div>
                     <div class="col-12 col-md-4 col-lg-3">
                         <cub-event-list v-bind:events="fbEvents"></cub-event-list>

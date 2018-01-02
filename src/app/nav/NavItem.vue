@@ -1,8 +1,8 @@
 <template>
-    <a v-bind:href="item.url">
+    <router-link v-bind:to="item.url">
         <i class="icon material-icons">{{item.icon}}</i>
         {{item.label}}
-    </a>
+    </router-link>
 </template>
 
 <script lang="ts">
@@ -36,7 +36,7 @@
             text-decoration: none;
         }
 
-        &.active {
+        &.router-link-active {
             background-color: $scout-blue-dark;
             color: $scout-blue-lightest;
         }

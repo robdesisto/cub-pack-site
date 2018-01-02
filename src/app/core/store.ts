@@ -16,7 +16,7 @@ const initialState: AppState = {
     posts: null
 };
 
-const store = new Vuex.Store({
+export const store = new Vuex.Store({
     state: initialState,
     getters: {
         navItems: navItemGetter
@@ -84,5 +84,3 @@ const store = new Vuex.Store({
         }
     }
 });
-
-export default store;
