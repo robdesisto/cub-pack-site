@@ -50,6 +50,10 @@ body,
     height: 100%;
 }
 
+.main {
+    overflow-y: auto;
+}
+
 .container {
     @include media-breakpoint-down(lg) {
         max-width: 1140px;

@@ -10,7 +10,7 @@
     import {Component, Prop, Emit} from 'vue-property-decorator';
 
     @Component
-    export default class CubSideNavContainer extends Vue {
+    export default class CubNavContainer extends Vue {
         @Prop() public active: boolean;
         @Emit('hideNav') hideNav(): void {}
     }
@@ -24,14 +24,12 @@
         overflow: hidden;
         position: relative;
         width: 100%;
-        z-index: 1;
 
         &.active {
             .overlay {
                 opacity: 0.6;
                 transition: opacity 0.4s ease, visibility 0.01s;
                 visibility: visible;
-                z-index: 101;
             }
         }
     }
@@ -46,5 +44,6 @@
         transition: opacity 0.4s ease, visibility 0.05s 0.41s;
         top: 0;
         visibility: hidden;
+        z-index: 101;
     }
 </style>

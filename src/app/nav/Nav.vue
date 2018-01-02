@@ -9,12 +9,12 @@
     import Vue from 'vue';
     import {Component, Prop} from 'vue-property-decorator';
 
-    import CubHeader from '../Header.vue';
+    import CubHeader from '@app/Header.vue';
 
     @Component({
         components: {CubHeader}
     })
-    export default class CubSideNav extends Vue {
+    export default class CubNav extends Vue {
         @Prop() public active: boolean;
     }
 </script>

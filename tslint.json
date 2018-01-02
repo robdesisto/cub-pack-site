@@ -5,20 +5,37 @@
     ],
     "jsRules": {},
     "rules": {
+        "no-consecutive-blank-lines": false,
+        "no-string-literal": false,
+        "no-var-requires": true,
+        "object-literal-sort-keys": false,
+        "no-console": [
+            true,
+            "log"
+        ],
+        "no-trailing-whitespace": false,
+        "interface-name": [
+            true,
+            "never-prefix"
+        ],
+        "variable-name": [
+            true,
+            "allow-leading-underscore"
+        ],
+        "ordered-imports": false,
         "quotemark": [
             true,
             "single"
         ],
-        "indent": [
-            true
+        "trailing-comma": [
+            true,
+            {
+                "singleline": "never",
+                "multiline": "never"
+            }
         ],
-        "interface-name": [
-            false
-        ],
-        "arrow-parens": false,
-        // Pending fix for shorthand property names.
-        "object-literal-sort-keys": false,
-        "trailing-comma": false
-    },
-    "rulesDirectory": []
+        "max-line-length": [
+            140
+        ]
+    }
 }
