@@ -78,6 +78,7 @@ module.exports = {
         new CopyWebpackPlugin(
             [
                 { from: helpers.root('src/assets'), to: helpers.root('dist/assets') },
+                { from: helpers.root('_redirects'), to: helpers.root('dist') },
             ]
         ),
         new webpack.optimize.UglifyJsPlugin({
