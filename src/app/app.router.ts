@@ -16,10 +16,10 @@ const routes: RouteConfig[] = [
 
 export const router = new Router({
     routes,
-    mode: 'history',
+    // mode: 'history',
     scrollBehavior: () => {
         return {
-            selector: '.main',
+            selector: '#main',
             offset: {x: 0, y: 0 }
         };
     }
