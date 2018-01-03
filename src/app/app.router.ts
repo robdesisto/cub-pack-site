@@ -16,7 +16,7 @@ const routes: RouteConfig[] = [
 
 export const router = new Router({
     routes,
-    // mode: 'history',
+    mode: 'history',
     scrollBehavior: () => {
         return {
             selector: '#main',

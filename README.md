@@ -41,7 +41,7 @@ And use the following commands as needed:
 
 * ```npm run build:prod``` builds the app in production mode (minified and whatnot).
 
-* ```npm run release``` let's standard version do it's thing.
+* ```npm run publish``` let's standard version do it's thing.
 
 * ```npm run test``` I'm putting this here to guilt myself into writing tests soon.
 
