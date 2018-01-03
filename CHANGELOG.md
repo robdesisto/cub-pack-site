@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.0-0"></a>
+# [1.0.0-0](https://github.com/robdesisto/cub-pack-site/compare/v0.0.7...v1.0.0-0) (2018-01-03)
+
+
+### Bug Fixes
+
+* make events vaguer ([9b9550e](https://github.com/robdesisto/cub-pack-site/commit/9b9550e))
+* style linting ([3d03f73](https://github.com/robdesisto/cub-pack-site/commit/3d03f73))
+
+
+### Features
+
+* app now supports arbitrary pages ([d7a9309](https://github.com/robdesisto/cub-pack-site/commit/d7a9309))
+* codify border colors functionally ([fc6afb6](https://github.com/robdesisto/cub-pack-site/commit/fc6afb6))
+* port app to vue ([6529131](https://github.com/robdesisto/cub-pack-site/commit/6529131))
+
+
+### BREAKING CHANGES
+
+* everything different
+
+
+
 <a name="0.0.7"></a>
 ## [0.0.7](https://github.com/robdesisto/cub-pack-site/compare/v0.0.6...v0.0.7) (2017-10-23)
 
