@@ -1,7 +1,7 @@
 {
   "name": "cub-pack-site",
   "description": "An open source project to let any cub scout pack quickly build an online presence.",
-  "version": "1.0.0-0",
+  "version": "0.1.0",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
     "lint": "npm run lint:style && npm run lint:ts",
     "lint:style": "stylelint \"src/**/*.(scss|vue)\"",
     "lint:ts": "tslint \"src/**/*.ts\"",
-    "release": "standard-version --prerelease && node scripts/push-tag.js",
+    "release": "standard-version && git push --follow-tags origin master",
     "start": "webpack-dev-server --hot --progress --port 8122"
   },
   "dependencies": {
