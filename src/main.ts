@@ -1,12 +1,15 @@
-import {enableProdMode} from '@angular/core';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import Vue from 'vue';
 
-import {AppModule} from '@app/app.module';
-import {environment} from '@env/environment';
+import './styles.scss';
 
-if (environment.production) {
-  enableProdMode();
-}
+import CubApp from '@app/App.vue';
+import {router} from '@app/app.router';
+import {store} from '@app/store/store';
+import '@app/common';
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.log(err));
+const v = new Vue({
+    router,
+    store,
+    template: '<cub-app/>',
+    components: { CubApp }
+}).$mount('#app');

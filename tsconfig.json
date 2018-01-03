@@ -1,17 +1,23 @@
 {
     "compileOnSave": false,
     "compilerOptions": {
-        "baseUrl": "src",
-        "outDir": "./dist/out-tsc",
+        "baseUrl": "./src",
         "sourceMap": true,
         "declaration": false,
+        "isolatedModules": false,
         "moduleResolution": "node",
+        "module": "esnext",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
         "target": "es5",
         "typeRoots": [
-            "node_modules/@types"
+            "node_modules/@types",
+            "./src/types"
         ],
+        "jsx": "preserve",
+        "jsxFactory": "h",
         "lib": [
             "es2017",
             "dom"
@@ -20,5 +26,9 @@
             "@app/*": ["app/*"],
             "@env/*": ["environments/*"]
         }
-    }
+    },
+    "exclude": [
+        "node_modules",
+        "build"
+    ]
 }
