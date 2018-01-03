@@ -35,13 +35,14 @@ import CubNavItem from '@app/nav/NavItem.vue';
 import CubNav from '@app/nav/Nav.vue';
 import CubNavContainer from '@app/nav/NavContainer.vue';
 
+import {OnCreated} from '@app/types';
 import {NavItem} from '@app/store/interfaces/NavItem';
 import {FbEvent} from '@app/store/models/FbEvent';
 
 @Component({
     components: {CubEventList, CubFooter, CubHeader, CubNavContainer, CubNav, CubNavItem}
 })
-export default class CubApp extends Vue {
+export default class CubApp extends Vue implements OnCreated {
 
     public navActive = false;
 
@@ -53,9 +54,7 @@ export default class CubApp extends Vue {
         return this.$store.state.events;
     }
 
-    constructor($store: any) {
-        super($store);
-
+    public created(): void {
         this.$store.dispatch('loadFbEvents');
         this.$store.dispatch('loadPages');
     }

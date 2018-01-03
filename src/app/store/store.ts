@@ -52,9 +52,7 @@ export const store = new Vuex.Store({
 
                 context.commit('setFbEvents', events);
             })
-            .catch((e: Error) => {
-                console.error(e);
-            });
+            .catch((e: Error) => console.error(e));
         },
         loadFbPosts: (context: any): void => {
             fetch(`${AppConstants.apiUrl}/fb/posts`).then((response: any) => {
@@ -66,9 +64,7 @@ export const store = new Vuex.Store({
 
                 context.commit('setFbPosts', posts);
             })
-            .catch((e: Error) => {
-                console.error(e);
-            });
+            .catch((e: Error) => console.error(e));
         },
         loadPages: (context: any): void => {
             fetch(`${AppConstants.apiUrl}/cms/pages`).then((response: any) => {
@@ -81,9 +77,7 @@ export const store = new Vuex.Store({
 
                 context.commit('setPages', pages);
             })
-            .catch((e: Error) => {
-                console.error(e);
-            });
+            .catch((e: Error) => console.error(e));
         }
     }
 });

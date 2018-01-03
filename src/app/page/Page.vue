@@ -18,9 +18,5 @@
         get pageContent(): PageContent | null {
             return  this.id ? this.$store.getters.pageContent(this.id) : null;
         }
-
-        constructor($store: any) {
-            super($store);
-        }
     }
 </script>

@@ -1,9 +1,9 @@
 <template>
     <header>
         <nav class="navbar">
-            <a class="navbar-brand" href="/">
+            <router-link  class="navbar-brand" to ="/home">
                 <img class="logo" src="/assets/logo.png"> {{orgName}}
-            </a>
+            </router-link>
             <slot></slot>
         </nav>
     </header>

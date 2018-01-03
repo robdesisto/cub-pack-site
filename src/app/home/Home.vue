@@ -9,6 +9,7 @@
     import Vue from 'vue';
     import {Component} from 'vue-property-decorator';
 
+    import {OnCreated} from '@app/types';
     import {FbPost} from '@app/store/models/FbPost';
     import {PageContent} from '@app/store/models/PageContent';
     import CubNewsFeed from '@app/home/news-feed/NewsFeed.vue'
@@ -16,7 +17,7 @@
     @Component({
         components: {CubNewsFeed}
     })
-    export default class Home extends Vue {
+    export default class Home extends Vue implements OnCreated {
         get fbPosts(): FbPost[] | null {
             return this.$store.state.posts;
         }
@@ -25,9 +26,7 @@
             return this.$store.getters.pageContent('home');
         }
 
-        constructor($store: any) {
-            super($store);
-
+        public created(): void {
             this.$store.dispatch('loadFbPosts');
         }
     }
