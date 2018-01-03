@@ -45,7 +45,11 @@
     import {AppConstants} from '@app/store/AppConstants';
     import {PageContent} from '@app/store/models/PageContent';
 
-    @Component
+    import CubPageContent from '@app/common/PageContent.vue';
+    
+    @Component({
+        components: {CubPageContent}
+    })
     export default class Connect extends Vue {
 
         get pageContent(): PageContent | null {

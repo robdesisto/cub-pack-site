@@ -10,7 +10,11 @@
 
     import {PageContent} from '@app/store/models/PageContent';
 
-    @Component
+    import CubPageContent from '@app/common/PageContent.vue';
+
+    @Component({
+        components: {CubPageContent}
+    })
     export default class Page extends Vue {
 
         @Prop() public id: string;

@@ -9,7 +9,7 @@
     import Vue from 'vue';
     import {Component, Prop} from 'vue-property-decorator';
 
-    import {PageContent} from '../../store/models/PageContent';
+    import {PageContent} from '@app/store/models/PageContent';
 
     @Component({
         name: 'CubPageContent'

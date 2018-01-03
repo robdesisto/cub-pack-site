@@ -12,10 +12,12 @@
     import {OnCreated} from '@app/types';
     import {FbPost} from '@app/store/models/FbPost';
     import {PageContent} from '@app/store/models/PageContent';
+
     import CubNewsFeed from '@app/home/news-feed/NewsFeed.vue'
+    import CubPageContent from '@app/common/PageContent.vue';
 
     @Component({
-        components: {CubNewsFeed}
+        components: {CubNewsFeed, CubPageContent}
     })
     export default class Home extends Vue implements OnCreated {
         get fbPosts(): FbPost[] | null {
