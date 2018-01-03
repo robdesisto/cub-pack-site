@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.1.4"></a>
+## [0.1.4](https://github.com/robdesisto/cub-pack-site/compare/v0.1.3...v0.1.4) (2018-01-03)
+
+
+### Bug Fixes
+
+* resolve common component correctly ([ea05d8a](https://github.com/robdesisto/cub-pack-site/commit/ea05d8a))
+
+
+
 <a name="0.1.3"></a>
 ## [0.1.3](https://github.com/robdesisto/cub-pack-site/compare/v0.1.2...v0.1.3) (2018-01-03)
 
