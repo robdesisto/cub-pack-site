@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.1.3"></a>
+## [0.1.3](https://github.com/robdesisto/cub-pack-site/compare/v0.1.2...v0.1.3) (2018-01-03)
+
+
+### Bug Fixes
+
+* remove reference to deleted file ([6e52ae1](https://github.com/robdesisto/cub-pack-site/commit/6e52ae1))
+
+
+
 <a name="0.1.2"></a>
 ## [0.1.2](https://github.com/robdesisto/cub-pack-site/compare/v0.1.1...v0.1.2) (2018-01-03)
 
